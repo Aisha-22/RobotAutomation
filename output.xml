@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1 (Python 3.9.6 on win32)" generated="20210905 22:44:36.422" rpa="false" schemaversion="2">
+<suite id="s1" name="TC 009 Get Request" source="C:\Users\user\PycharmProjects\pythonProject\pythonProject\RobotAutomation\TestCases\TC_009_Get_Request.robot">
+<test id="s1-t1" name="TC_009_Fetch_Student_details_by_id">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>FetchData</arg>
+<arg>${App_Base_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20210905 22:44:36.552" level="INFO">Creating Session using : alias=FetchData, url=http://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210905 22:44:36.552" endtime="20210905 22:44:36.552"/>
+</kw>
+<kw name="Get On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>FetchData</arg>
+<arg>studentsDetails/${StudentID}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20210905 22:44:37.371" level="INFO">GET Request : url=http://thetestingworldapi.com/studentsDetails/28 
+ path_url=/studentsDetails/28 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20210905 22:44:37.371" level="INFO">GET Response : url=http://thetestingworldapi.com/studentsDetails/28 
+ status=404, reason=Not Found 
+ headers={'Cache-Control': 'private', 'Content-Type': 'text/html; charset=utf-8', 'Server': 'Microsoft-IIS/8.5', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Sun, 05 Sep 2021 20:44:36 GMT', 'Content-Length': '1929'} 
+ body=&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;The resource cannot be found.&lt;/title&gt;
+        &lt;meta name="viewport" content="width=device-width" /&gt;
+        &lt;style&gt;
+         body {font-family:"Verdana";font-weight:normal;font-size: .7em;color:black;} 
+         p {font-family:"Verdana";font-weight:normal;color:black;margin-top: -5px}
+         b {font-family:"Verdana";font-weight:bold;color:black;margin-top: -5px}
+         H1 { font-family:"Verdana";font-weight:normal;font-size:18pt;color:red }
+         H2 { font-family:"Verdana";font-weight:normal;font-size:14pt;color:maroon }
+         pre {font-family:"Consolas","Lucida Console",Monospace;font-size:11pt;margin:0;padding:0.5em;line-height:14pt}
+         .marker {font-weight: bold; color: black;text-decoration: none;}
+         .version {color: gray;}
+         .error {margin-bottom: 10px;}
+         .expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:pointer; }
+         @media screen and (max-width: 639px) {
+          pre { width: 440px; overflow: auto; white-space: pre-wrap; word-wrap: break-word; }
+         }
+         @media screen and (max-width: 479px) {
+          pre { width: 280px; }
+         }
+        &lt;/style&gt;
+    &lt;/head&gt;
+
+    &lt;body bgcolor="white"&gt;
+
+            &lt;span&gt;&lt;H1&gt;Server Error in '/' Application.&lt;hr width=100% size=1 color=silver&gt;&lt;/H1&gt;
+
+            &lt;h2&gt; &lt;i&gt;The resource cannot be found.&lt;/i&gt; &lt;/h2&gt;&lt;/span&gt;
+
+            &lt;font face="Arial, Helvetica, Geneva, SunSans-Regular, sans-serif "&gt;
+
+            &lt;b&gt; Description: &lt;/b&gt;HTTP 404. The resource you are looking for (or one of its dependencies) could have been removed, had its name changed, or is temporarily unavailable. &amp;nbsp;Please review the following URL and make sure that it is spelled correctly.
+            &lt;br&gt;&lt;br&gt;
+
+            &lt;b&gt; Requested URL: &lt;/b&gt;/studentsDetails/28&lt;br&gt;&lt;br&gt;
+
+            &lt;/font&gt;
+
+    &lt;/body&gt;
+&lt;/html&gt;
+ 
+ </msg>
+<msg timestamp="20210905 22:44:37.371" level="FAIL">HTTPError: 404 Client Error: Not Found for url: http://thetestingworldapi.com/studentsDetails/28</msg>
+<status status="FAIL" starttime="20210905 22:44:36.552" endtime="20210905 22:44:37.371"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${actual_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" starttime="20210905 22:44:37.371" endtime="20210905 22:44:37.371"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${actual_code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" starttime="20210905 22:44:37.371" endtime="20210905 22:44:37.371"/>
+</kw>
+<status status="FAIL" starttime="20210905 22:44:36.552" endtime="20210905 22:44:37.371">HTTPError: 404 Client Error: Not Found for url: http://thetestingworldapi.com/studentsDetails/28</status>
+</test>
+<status status="FAIL" starttime="20210905 22:44:36.422" endtime="20210905 22:44:37.371"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="TC 009 Get Request">TC 009 Get Request</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

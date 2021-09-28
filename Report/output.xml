@@ -1,0 +1,1927 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1 (Python 3.9.6 on win32)" generated="20210905 00:25:33.398" rpa="false" schemaversion="2">
+<suite id="s1" name="TC 002 DropdownList" source="C:\Users\user\PycharmProjects\pythonProject\pythonProject\RobotAutomation\TestCases\TC_002_DropdownList.robot">
+<test id="s1-t1" name="Robot First Test Case">
+<kw name="Start Browser and Maximize" library="Resources1">
+<arg>http://www.thetestingworld.com</arg>
+<doc>This Keyword is for start Browser and Maximize its Window</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${UserURL}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<msg timestamp="20210905 00:25:35.772" level="INFO">Opening browser 'Chrome' to base url 'http://www.thetestingworld.com'.</msg>
+<status status="PASS" starttime="20210905 00:25:35.772" endtime="20210905 00:25:55.046"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210905 00:25:55.046" endtime="20210905 00:25:55.193"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>VIDEOS</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20210905 00:25:55.231" level="INFO">Current page contains text 'VIDEOS'.</msg>
+<status status="PASS" starttime="20210905 00:25:55.193" endtime="20210905 00:25:55.231"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>http://www.thetestingworld.com/testings</arg>
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<msg timestamp="20210905 00:25:55.232" level="INFO">Opening url 'http://www.thetestingworld.com/testings'</msg>
+<status status="PASS" starttime="20210905 00:25:55.231" endtime="20210905 00:25:58.825"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210905 00:25:58.825" endtime="20210905 00:25:58.829"/>
+</kw>
+<status status="PASS" starttime="20210905 00:25:35.771" endtime="20210905 00:25:58.829"/>
+</kw>
+<kw name="Get Title" library="SeleniumLibrary">
+<var>${Title}</var>
+<doc>Returns the title of current page.</doc>
+<msg timestamp="20210905 00:25:58.835" level="INFO">${Title} = Login &amp; Sign Up Forms</msg>
+<status status="PASS" starttime="20210905 00:25:58.830" endtime="20210905 00:25:58.835"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${Title}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210905 00:25:58.836" level="INFO">Login &amp; Sign Up Forms</msg>
+<status status="PASS" starttime="20210905 00:25:58.836" endtime="20210905 00:25:58.836"/>
+</kw>
+<kw name="Get Selenium Implicit Wait" library="SeleniumLibrary">
+<var>${default_T}</var>
+<doc>Gets the implicit wait value used by Selenium.</doc>
+<msg timestamp="20210905 00:25:58.837" level="INFO">${default_T} = 0 seconds</msg>
+<status status="PASS" starttime="20210905 00:25:58.837" endtime="20210905 00:25:58.837"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${default_T}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210905 00:25:58.838" endtime="20210905 00:25:58.838"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>20 seconds</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20210905 00:25:58.839" endtime="20210905 00:25:58.839"/>
+</kw>
+<kw name="Get Selenium Implicit Wait" library="SeleniumLibrary">
+<var>${default_T}</var>
+<doc>Gets the implicit wait value used by Selenium.</doc>
+<msg timestamp="20210905 00:25:58.840" level="INFO">${default_T} = 20 seconds</msg>
+<status status="PASS" starttime="20210905 00:25:58.840" endtime="20210905 00:25:58.840"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${default_T}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210905 00:25:58.841" endtime="20210905 00:25:58.841"/>
+</kw>
+<kw name="Read Number of Row" library="Resources1">
+<var>${row}</var>
+<arg>Sheet1</arg>
+<kw name="Fetch Number Of Rows" library="ExcelReader">
+<var>${maxr}</var>
+<arg>${sheetname}</arg>
+<msg timestamp="20210905 00:25:58.842" level="INFO">${maxr} = 5</msg>
+<status status="PASS" starttime="20210905 00:25:58.842" endtime="20210905 00:25:58.842"/>
+</kw>
+<msg timestamp="20210905 00:25:58.842" level="INFO">${row} = 5</msg>
+<status status="PASS" starttime="20210905 00:25:58.842" endtime="20210905 00:25:58.842"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>1</value>
+<value>${row}+1</value>
+<iter>
+<var name="${i}">1</var>
+<kw name="Read Excel Data of Cell">
+<var>${username1}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>1</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:25:58.844" level="INFO">${celldata} = Aisha_H</msg>
+<status status="PASS" starttime="20210905 00:25:58.844" endtime="20210905 00:25:58.844"/>
+</kw>
+<msg timestamp="20210905 00:25:58.845" level="INFO">${username1} = Aisha_H</msg>
+<status status="PASS" starttime="20210905 00:25:58.843" endtime="20210905 00:25:58.845"/>
+</kw>
+<kw name="Read Excel Data of Cell">
+<var>${email1}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>2</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:25:58.845" level="INFO">${celldata} = ash.hlatshwayo22@gmail.com</msg>
+<status status="PASS" starttime="20210905 00:25:58.845" endtime="20210905 00:25:58.845"/>
+</kw>
+<msg timestamp="20210905 00:25:58.846" level="INFO">${email1} = ash.hlatshwayo22@gmail.com</msg>
+<status status="PASS" starttime="20210905 00:25:58.845" endtime="20210905 00:25:58.846"/>
+</kw>
+<kw name="Read Excel Data of Cell">
+<var>${password1}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>3</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:25:58.846" level="INFO">${celldata} = 12345</msg>
+<status status="PASS" starttime="20210905 00:25:58.846" endtime="20210905 00:25:58.846"/>
+</kw>
+<msg timestamp="20210905 00:25:58.846" level="INFO">${password1} = 12345</msg>
+<status status="PASS" starttime="20210905 00:25:58.846" endtime="20210905 00:25:58.846"/>
+</kw>
+<kw name="Read Excel Data of Cell">
+<var>${password2}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>4</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:25:58.847" level="INFO">${celldata} = 12345</msg>
+<status status="PASS" starttime="20210905 00:25:58.847" endtime="20210905 00:25:58.847"/>
+</kw>
+<msg timestamp="20210905 00:25:58.847" level="INFO">${password2} = 12345</msg>
+<status status="PASS" starttime="20210905 00:25:58.847" endtime="20210905 00:25:58.847"/>
+</kw>
+<kw name="Read Excel Data of Cell">
+<var>${dateofbirth}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>5</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:25:58.849" level="INFO">${celldata} = 02/22/1992</msg>
+<status status="PASS" starttime="20210905 00:25:58.848" endtime="20210905 00:25:58.849"/>
+</kw>
+<msg timestamp="20210905 00:25:58.849" level="INFO">${dateofbirth} = 02/22/1992</msg>
+<status status="PASS" starttime="20210905 00:25:58.848" endtime="20210905 00:25:58.849"/>
+</kw>
+<kw name="Read Excel Data of Cell">
+<var>${contact}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>6</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:25:58.850" level="INFO">${celldata} = 0710191715</msg>
+<status status="PASS" starttime="20210905 00:25:58.849" endtime="20210905 00:25:58.850"/>
+</kw>
+<msg timestamp="20210905 00:25:58.850" level="INFO">${contact} = 0710191715</msg>
+<status status="PASS" starttime="20210905 00:25:58.849" endtime="20210905 00:25:58.850"/>
+</kw>
+<kw name="Read Excel Data of Cell">
+<var>${address}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>7</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:25:58.851" level="INFO">${celldata} = 48 Brietta Street Ridgeway Ext 4</msg>
+<status status="PASS" starttime="20210905 00:25:58.850" endtime="20210905 00:25:58.851"/>
+</kw>
+<msg timestamp="20210905 00:25:58.851" level="INFO">${address} = 48 Brietta Street Ridgeway Ext 4</msg>
+<status status="PASS" starttime="20210905 00:25:58.850" endtime="20210905 00:25:58.851"/>
+</kw>
+<kw name="Read Excel Data of Cell">
+<var>${zipcode}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>8</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:25:58.852" level="INFO">${celldata} = 2091</msg>
+<status status="PASS" starttime="20210905 00:25:58.852" endtime="20210905 00:25:58.852"/>
+</kw>
+<msg timestamp="20210905 00:25:58.852" level="INFO">${zipcode} = 2091</msg>
+<status status="PASS" starttime="20210905 00:25:58.851" endtime="20210905 00:25:58.852"/>
+</kw>
+<kw name="Read Element Locator" library="Resources1">
+<var>${username}</var>
+<arg>Registration.username_textbox_name</arg>
+<kw name="Read Locator From Json" library="Locators">
+<var>${result}</var>
+<arg>${JsonPath}</arg>
+<msg timestamp="20210905 00:25:58.854" level="INFO">${result} = fld_username</msg>
+<status status="PASS" starttime="20210905 00:25:58.852" endtime="20210905 00:25:58.854"/>
+</kw>
+<msg timestamp="20210905 00:25:58.854" level="INFO">${username} = fld_username</msg>
+<status status="PASS" starttime="20210905 00:25:58.852" endtime="20210905 00:25:58.854"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:${username}</arg>
+<arg>${username1}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:25:58.854" level="INFO">Typing text 'Aisha_H' into text field 'name:fld_username'.</msg>
+<status status="PASS" starttime="20210905 00:25:58.854" endtime="20210905 00:25:58.963"/>
+</kw>
+<kw name="Read Element Locator" library="Resources1">
+<var>${email}</var>
+<arg>Registration.email_textbox_name</arg>
+<kw name="Read Locator From Json" library="Locators">
+<var>${result}</var>
+<arg>${JsonPath}</arg>
+<msg timestamp="20210905 00:25:58.965" level="INFO">${result} = fld_email</msg>
+<status status="PASS" starttime="20210905 00:25:58.963" endtime="20210905 00:25:58.965"/>
+</kw>
+<msg timestamp="20210905 00:25:58.965" level="INFO">${email} = fld_email</msg>
+<status status="PASS" starttime="20210905 00:25:58.963" endtime="20210905 00:25:58.965"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:${email}</arg>
+<arg>${email1}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:25:58.965" level="INFO">Typing text 'ash.hlatshwayo22@gmail.com' into text field 'name:fld_email'.</msg>
+<status status="PASS" starttime="20210905 00:25:58.965" endtime="20210905 00:25:59.107"/>
+</kw>
+<kw name="Read Element Locator" library="Resources1">
+<var>${password}</var>
+<arg>Registration.password_textbox_name</arg>
+<kw name="Read Locator From Json" library="Locators">
+<var>${result}</var>
+<arg>${JsonPath}</arg>
+<msg timestamp="20210905 00:25:59.108" level="INFO">${result} = fld_password</msg>
+<status status="PASS" starttime="20210905 00:25:59.107" endtime="20210905 00:25:59.108"/>
+</kw>
+<msg timestamp="20210905 00:25:59.109" level="INFO">${password} = fld_password</msg>
+<status status="PASS" starttime="20210905 00:25:59.107" endtime="20210905 00:25:59.109"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:${password}</arg>
+<arg>${password1}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:25:59.109" level="INFO">Typing text '12345' into text field 'name:fld_password'.</msg>
+<status status="PASS" starttime="20210905 00:25:59.109" endtime="20210905 00:25:59.213"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://*[@id="tab-content1"]/form/input[5]</arg>
+<arg>${password2}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:25:59.213" level="INFO">Typing text '12345' into text field 'xpath://*[@id="tab-content1"]/form/input[5]'.</msg>
+<status status="PASS" starttime="20210905 00:25:59.213" endtime="20210905 00:25:59.305"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@name="dob"]</arg>
+<arg>${dateofbirth}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:25:59.306" level="INFO">Typing text '02/22/1992' into text field '//input[@name="dob"]'.</msg>
+<status status="PASS" starttime="20210905 00:25:59.305" endtime="20210905 00:25:59.425"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://*[@id="tab-content1"]/form/input[7]</arg>
+<arg>${contact}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:25:59.426" level="INFO">Typing text '0710191715' into text field 'xpath://*[@id="tab-content1"]/form/input[7]'.</msg>
+<status status="PASS" starttime="20210905 00:25:59.425" endtime="20210905 00:25:59.521"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://*[@id="tab-content1"]/form/input[8]</arg>
+<arg>${address}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:25:59.521" level="INFO">Typing text '48 Brietta Street Ridgeway Ext 4' into text field 'xpath://*[@id="tab-content1"]/form/input[8]'.</msg>
+<status status="PASS" starttime="20210905 00:25:59.521" endtime="20210905 00:25:59.673"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>add_type</arg>
+<arg>home</arg>
+<doc>Sets radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20210905 00:25:59.673" level="INFO">Selecting 'home' from radio button 'add_type'.</msg>
+<status status="PASS" starttime="20210905 00:25:59.673" endtime="20210905 00:25:59.813"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>name:sex</arg>
+<arg>Female</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20210905 00:25:59.813" level="INFO">Selecting options from selection list 'name:sex' by label Female.</msg>
+<status status="PASS" starttime="20210905 00:25:59.813" endtime="20210905 00:26:00.044"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>//select[@name="country"]</arg>
+<arg>202</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20210905 00:26:00.045" level="INFO">Selecting options from selection list '//select[@name="country"]' by value 202.</msg>
+<status status="PASS" starttime="20210905 00:26:00.044" endtime="20210905 00:26:00.116"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>//select[@name="state"]</arg>
+<arg>3240</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20210905 00:26:00.116" level="INFO">Selecting options from selection list '//select[@name="state"]' by value 3240.</msg>
+<status status="PASS" starttime="20210905 00:26:00.116" endtime="20210905 00:26:03.433"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>//select[@name="city"]</arg>
+<arg>38049</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20210905 00:26:03.434" level="INFO">Selecting options from selection list '//select[@name="city"]' by value 38049.</msg>
+<status status="PASS" starttime="20210905 00:26:03.433" endtime="20210905 00:26:06.765"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@name="zip"]</arg>
+<arg>${zipcode}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:06.766" level="INFO">Typing text '2091' into text field '//input[@name="zip"]'.</msg>
+<status status="PASS" starttime="20210905 00:26:06.765" endtime="20210905 00:26:06.858"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>./SnapShots/TC1.png</arg>
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20210905 00:26:08.314" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="SnapShots/TC1.png"&gt;&lt;img src="SnapShots/TC1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210905 00:26:06.858" endtime="20210905 00:26:08.315"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>name:terms</arg>
+<doc>Selects checkbox identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:08.315" level="INFO">Selecting checkbox 'name:terms'.</msg>
+<status status="PASS" starttime="20210905 00:26:08.315" endtime="20210905 00:26:08.395"/>
+</kw>
+<kw name="Checkbox Should Be Selected" library="SeleniumLibrary">
+<arg>name:terms</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<msg timestamp="20210905 00:26:08.395" level="INFO">Verifying checkbox 'name:terms' is selected.</msg>
+<status status="PASS" starttime="20210905 00:26:08.395" endtime="20210905 00:26:08.425"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0,200)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210905 00:26:08.426" level="INFO">Executing JavaScript:
+window.scrollTo(0,200)
+Without any arguments.</msg>
+<status status="PASS" starttime="20210905 00:26:08.425" endtime="20210905 00:26:08.431"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>./SnapShots/TC2.png</arg>
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20210905 00:26:09.793" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="SnapShots/TC2.png"&gt;&lt;img src="SnapShots/TC2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210905 00:26:08.431" endtime="20210905 00:26:09.793"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath://input[@type='submit']</arg>
+<doc>Clicks button identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:09.794" level="INFO">Clicking button 'xpath://input[@type='submit']'.</msg>
+<status status="PASS" starttime="20210905 00:26:09.793" endtime="20210905 00:26:10.437"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210905 00:26:15.452" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210905 00:26:10.438" endtime="20210905 00:26:15.452"/>
+</kw>
+<status status="PASS" starttime="20210905 00:25:58.843" endtime="20210905 00:26:15.452"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Read Excel Data of Cell">
+<var>${username1}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>1</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:26:15.452" level="INFO">${celldata} = Kelly_R</msg>
+<status status="PASS" starttime="20210905 00:26:15.452" endtime="20210905 00:26:15.452"/>
+</kw>
+<msg timestamp="20210905 00:26:15.452" level="INFO">${username1} = Kelly_R</msg>
+<status status="PASS" starttime="20210905 00:26:15.452" endtime="20210905 00:26:15.452"/>
+</kw>
+<kw name="Read Excel Data of Cell">
+<var>${email1}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>2</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:26:15.452" level="INFO">${celldata} = kelly.rock@gmail.com</msg>
+<status status="PASS" starttime="20210905 00:26:15.452" endtime="20210905 00:26:15.452"/>
+</kw>
+<msg timestamp="20210905 00:26:15.452" level="INFO">${email1} = kelly.rock@gmail.com</msg>
+<status status="PASS" starttime="20210905 00:26:15.452" endtime="20210905 00:26:15.452"/>
+</kw>
+<kw name="Read Excel Data of Cell">
+<var>${password1}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>3</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:26:15.452" level="INFO">${celldata} = 09876</msg>
+<status status="PASS" starttime="20210905 00:26:15.452" endtime="20210905 00:26:15.452"/>
+</kw>
+<msg timestamp="20210905 00:26:15.452" level="INFO">${password1} = 09876</msg>
+<status status="PASS" starttime="20210905 00:26:15.452" endtime="20210905 00:26:15.452"/>
+</kw>
+<kw name="Read Excel Data of Cell">
+<var>${password2}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>4</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:26:15.452" level="INFO">${celldata} = 09876</msg>
+<status status="PASS" starttime="20210905 00:26:15.452" endtime="20210905 00:26:15.452"/>
+</kw>
+<msg timestamp="20210905 00:26:15.452" level="INFO">${password2} = 09876</msg>
+<status status="PASS" starttime="20210905 00:26:15.452" endtime="20210905 00:26:15.452"/>
+</kw>
+<kw name="Read Excel Data of Cell">
+<var>${dateofbirth}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>5</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:26:15.452" level="INFO">${celldata} = 03/17/1990</msg>
+<status status="PASS" starttime="20210905 00:26:15.452" endtime="20210905 00:26:15.452"/>
+</kw>
+<msg timestamp="20210905 00:26:15.452" level="INFO">${dateofbirth} = 03/17/1990</msg>
+<status status="PASS" starttime="20210905 00:26:15.452" endtime="20210905 00:26:15.452"/>
+</kw>
+<kw name="Read Excel Data of Cell">
+<var>${contact}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>6</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:26:15.452" level="INFO">${celldata} = 0863232345</msg>
+<status status="PASS" starttime="20210905 00:26:15.452" endtime="20210905 00:26:15.452"/>
+</kw>
+<msg timestamp="20210905 00:26:15.452" level="INFO">${contact} = 0863232345</msg>
+<status status="PASS" starttime="20210905 00:26:15.452" endtime="20210905 00:26:15.452"/>
+</kw>
+<kw name="Read Excel Data of Cell">
+<var>${address}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>7</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:26:15.452" level="INFO">${celldata} = 82 Jane Street Basonia Ext1</msg>
+<status status="PASS" starttime="20210905 00:26:15.452" endtime="20210905 00:26:15.452"/>
+</kw>
+<msg timestamp="20210905 00:26:15.452" level="INFO">${address} = 82 Jane Street Basonia Ext1</msg>
+<status status="PASS" starttime="20210905 00:26:15.452" endtime="20210905 00:26:15.452"/>
+</kw>
+<kw name="Read Excel Data of Cell">
+<var>${zipcode}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>8</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:26:15.452" level="INFO">${celldata} = 2991</msg>
+<status status="PASS" starttime="20210905 00:26:15.452" endtime="20210905 00:26:15.452"/>
+</kw>
+<msg timestamp="20210905 00:26:15.452" level="INFO">${zipcode} = 2991</msg>
+<status status="PASS" starttime="20210905 00:26:15.452" endtime="20210905 00:26:15.452"/>
+</kw>
+<kw name="Read Element Locator" library="Resources1">
+<var>${username}</var>
+<arg>Registration.username_textbox_name</arg>
+<kw name="Read Locator From Json" library="Locators">
+<var>${result}</var>
+<arg>${JsonPath}</arg>
+<msg timestamp="20210905 00:26:15.452" level="INFO">${result} = fld_username</msg>
+<status status="PASS" starttime="20210905 00:26:15.452" endtime="20210905 00:26:15.452"/>
+</kw>
+<msg timestamp="20210905 00:26:15.452" level="INFO">${username} = fld_username</msg>
+<status status="PASS" starttime="20210905 00:26:15.452" endtime="20210905 00:26:15.452"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:${username}</arg>
+<arg>${username1}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:15.452" level="INFO">Typing text 'Kelly_R' into text field 'name:fld_username'.</msg>
+<status status="PASS" starttime="20210905 00:26:15.452" endtime="20210905 00:26:15.574"/>
+</kw>
+<kw name="Read Element Locator" library="Resources1">
+<var>${email}</var>
+<arg>Registration.email_textbox_name</arg>
+<kw name="Read Locator From Json" library="Locators">
+<var>${result}</var>
+<arg>${JsonPath}</arg>
+<msg timestamp="20210905 00:26:15.575" level="INFO">${result} = fld_email</msg>
+<status status="PASS" starttime="20210905 00:26:15.575" endtime="20210905 00:26:15.575"/>
+</kw>
+<msg timestamp="20210905 00:26:15.575" level="INFO">${email} = fld_email</msg>
+<status status="PASS" starttime="20210905 00:26:15.574" endtime="20210905 00:26:15.575"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:${email}</arg>
+<arg>${email1}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:15.576" level="INFO">Typing text 'kelly.rock@gmail.com' into text field 'name:fld_email'.</msg>
+<status status="PASS" starttime="20210905 00:26:15.576" endtime="20210905 00:26:15.686"/>
+</kw>
+<kw name="Read Element Locator" library="Resources1">
+<var>${password}</var>
+<arg>Registration.password_textbox_name</arg>
+<kw name="Read Locator From Json" library="Locators">
+<var>${result}</var>
+<arg>${JsonPath}</arg>
+<msg timestamp="20210905 00:26:15.687" level="INFO">${result} = fld_password</msg>
+<status status="PASS" starttime="20210905 00:26:15.687" endtime="20210905 00:26:15.687"/>
+</kw>
+<msg timestamp="20210905 00:26:15.687" level="INFO">${password} = fld_password</msg>
+<status status="PASS" starttime="20210905 00:26:15.686" endtime="20210905 00:26:15.688"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:${password}</arg>
+<arg>${password1}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:15.688" level="INFO">Typing text '09876' into text field 'name:fld_password'.</msg>
+<status status="PASS" starttime="20210905 00:26:15.688" endtime="20210905 00:26:15.776"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://*[@id="tab-content1"]/form/input[5]</arg>
+<arg>${password2}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:15.777" level="INFO">Typing text '09876' into text field 'xpath://*[@id="tab-content1"]/form/input[5]'.</msg>
+<status status="PASS" starttime="20210905 00:26:15.776" endtime="20210905 00:26:15.847"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@name="dob"]</arg>
+<arg>${dateofbirth}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:15.847" level="INFO">Typing text '03/17/1990' into text field '//input[@name="dob"]'.</msg>
+<status status="PASS" starttime="20210905 00:26:15.847" endtime="20210905 00:26:15.987"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://*[@id="tab-content1"]/form/input[7]</arg>
+<arg>${contact}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:15.988" level="INFO">Typing text '0863232345' into text field 'xpath://*[@id="tab-content1"]/form/input[7]'.</msg>
+<status status="PASS" starttime="20210905 00:26:15.987" endtime="20210905 00:26:16.092"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://*[@id="tab-content1"]/form/input[8]</arg>
+<arg>${address}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:16.093" level="INFO">Typing text '82 Jane Street Basonia Ext1' into text field 'xpath://*[@id="tab-content1"]/form/input[8]'.</msg>
+<status status="PASS" starttime="20210905 00:26:16.093" endtime="20210905 00:26:16.201"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>add_type</arg>
+<arg>home</arg>
+<doc>Sets radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20210905 00:26:16.201" level="INFO">Selecting 'home' from radio button 'add_type'.</msg>
+<status status="PASS" starttime="20210905 00:26:16.201" endtime="20210905 00:26:16.260"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>name:sex</arg>
+<arg>Female</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20210905 00:26:16.261" level="INFO">Selecting options from selection list 'name:sex' by label Female.</msg>
+<status status="PASS" starttime="20210905 00:26:16.260" endtime="20210905 00:26:16.318"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>//select[@name="country"]</arg>
+<arg>202</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20210905 00:26:16.319" level="INFO">Selecting options from selection list '//select[@name="country"]' by value 202.</msg>
+<status status="PASS" starttime="20210905 00:26:16.318" endtime="20210905 00:26:16.378"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>//select[@name="state"]</arg>
+<arg>3240</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20210905 00:26:16.378" level="INFO">Selecting options from selection list '//select[@name="state"]' by value 3240.</msg>
+<status status="PASS" starttime="20210905 00:26:16.378" endtime="20210905 00:26:19.698"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>//select[@name="city"]</arg>
+<arg>38049</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20210905 00:26:19.698" level="INFO">Selecting options from selection list '//select[@name="city"]' by value 38049.</msg>
+<status status="PASS" starttime="20210905 00:26:19.698" endtime="20210905 00:26:22.974"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@name="zip"]</arg>
+<arg>${zipcode}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:22.974" level="INFO">Typing text '2991' into text field '//input[@name="zip"]'.</msg>
+<status status="PASS" starttime="20210905 00:26:22.974" endtime="20210905 00:26:23.067"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>./SnapShots/TC1.png</arg>
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20210905 00:26:23.471" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="SnapShots/TC1.png"&gt;&lt;img src="SnapShots/TC1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210905 00:26:23.067" endtime="20210905 00:26:23.471"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>name:terms</arg>
+<doc>Selects checkbox identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:23.472" level="INFO">Selecting checkbox 'name:terms'.</msg>
+<status status="PASS" starttime="20210905 00:26:23.471" endtime="20210905 00:26:23.555"/>
+</kw>
+<kw name="Checkbox Should Be Selected" library="SeleniumLibrary">
+<arg>name:terms</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<msg timestamp="20210905 00:26:23.556" level="INFO">Verifying checkbox 'name:terms' is selected.</msg>
+<status status="PASS" starttime="20210905 00:26:23.556" endtime="20210905 00:26:23.589"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0,200)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210905 00:26:23.590" level="INFO">Executing JavaScript:
+window.scrollTo(0,200)
+Without any arguments.</msg>
+<status status="PASS" starttime="20210905 00:26:23.589" endtime="20210905 00:26:23.595"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>./SnapShots/TC2.png</arg>
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20210905 00:26:23.885" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="SnapShots/TC2.png"&gt;&lt;img src="SnapShots/TC2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210905 00:26:23.595" endtime="20210905 00:26:23.885"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath://input[@type='submit']</arg>
+<doc>Clicks button identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:23.885" level="INFO">Clicking button 'xpath://input[@type='submit']'.</msg>
+<status status="PASS" starttime="20210905 00:26:23.885" endtime="20210905 00:26:24.551"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210905 00:26:29.572" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210905 00:26:24.551" endtime="20210905 00:26:29.572"/>
+</kw>
+<status status="PASS" starttime="20210905 00:26:15.452" endtime="20210905 00:26:29.572"/>
+</iter>
+<iter>
+<var name="${i}">3</var>
+<kw name="Read Excel Data of Cell">
+<var>${username1}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>1</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:26:29.572" level="INFO">${celldata} = Roxanne_C</msg>
+<status status="PASS" starttime="20210905 00:26:29.572" endtime="20210905 00:26:29.572"/>
+</kw>
+<msg timestamp="20210905 00:26:29.572" level="INFO">${username1} = Roxanne_C</msg>
+<status status="PASS" starttime="20210905 00:26:29.572" endtime="20210905 00:26:29.572"/>
+</kw>
+<kw name="Read Excel Data of Cell">
+<var>${email1}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>2</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:26:29.572" level="INFO">${celldata} = roxanne.cooper@caxton.co.za</msg>
+<status status="PASS" starttime="20210905 00:26:29.572" endtime="20210905 00:26:29.572"/>
+</kw>
+<msg timestamp="20210905 00:26:29.572" level="INFO">${email1} = roxanne.cooper@caxton.co.za</msg>
+<status status="PASS" starttime="20210905 00:26:29.572" endtime="20210905 00:26:29.572"/>
+</kw>
+<kw name="Read Excel Data of Cell">
+<var>${password1}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>3</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:26:29.572" level="INFO">${celldata} = 66775</msg>
+<status status="PASS" starttime="20210905 00:26:29.572" endtime="20210905 00:26:29.572"/>
+</kw>
+<msg timestamp="20210905 00:26:29.572" level="INFO">${password1} = 66775</msg>
+<status status="PASS" starttime="20210905 00:26:29.572" endtime="20210905 00:26:29.572"/>
+</kw>
+<kw name="Read Excel Data of Cell">
+<var>${password2}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>4</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:26:29.572" level="INFO">${celldata} = 66775</msg>
+<status status="PASS" starttime="20210905 00:26:29.572" endtime="20210905 00:26:29.572"/>
+</kw>
+<msg timestamp="20210905 00:26:29.572" level="INFO">${password2} = 66775</msg>
+<status status="PASS" starttime="20210905 00:26:29.572" endtime="20210905 00:26:29.572"/>
+</kw>
+<kw name="Read Excel Data of Cell">
+<var>${dateofbirth}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>5</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:26:29.572" level="INFO">${celldata} = 11/30/1991</msg>
+<status status="PASS" starttime="20210905 00:26:29.572" endtime="20210905 00:26:29.572"/>
+</kw>
+<msg timestamp="20210905 00:26:29.572" level="INFO">${dateofbirth} = 11/30/1991</msg>
+<status status="PASS" starttime="20210905 00:26:29.572" endtime="20210905 00:26:29.572"/>
+</kw>
+<kw name="Read Excel Data of Cell">
+<var>${contact}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>6</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:26:29.572" level="INFO">${celldata} = 0731230987</msg>
+<status status="PASS" starttime="20210905 00:26:29.572" endtime="20210905 00:26:29.572"/>
+</kw>
+<msg timestamp="20210905 00:26:29.572" level="INFO">${contact} = 0731230987</msg>
+<status status="PASS" starttime="20210905 00:26:29.572" endtime="20210905 00:26:29.572"/>
+</kw>
+<kw name="Read Excel Data of Cell">
+<var>${address}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>7</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:26:29.572" level="INFO">${celldata} = 13 Gateway Street Maysdale Alberton </msg>
+<status status="PASS" starttime="20210905 00:26:29.572" endtime="20210905 00:26:29.572"/>
+</kw>
+<msg timestamp="20210905 00:26:29.572" level="INFO">${address} = 13 Gateway Street Maysdale Alberton </msg>
+<status status="PASS" starttime="20210905 00:26:29.572" endtime="20210905 00:26:29.572"/>
+</kw>
+<kw name="Read Excel Data of Cell">
+<var>${zipcode}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>8</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:26:29.572" level="INFO">${celldata} = 2082</msg>
+<status status="PASS" starttime="20210905 00:26:29.572" endtime="20210905 00:26:29.572"/>
+</kw>
+<msg timestamp="20210905 00:26:29.572" level="INFO">${zipcode} = 2082</msg>
+<status status="PASS" starttime="20210905 00:26:29.572" endtime="20210905 00:26:29.572"/>
+</kw>
+<kw name="Read Element Locator" library="Resources1">
+<var>${username}</var>
+<arg>Registration.username_textbox_name</arg>
+<kw name="Read Locator From Json" library="Locators">
+<var>${result}</var>
+<arg>${JsonPath}</arg>
+<msg timestamp="20210905 00:26:29.572" level="INFO">${result} = fld_username</msg>
+<status status="PASS" starttime="20210905 00:26:29.572" endtime="20210905 00:26:29.572"/>
+</kw>
+<msg timestamp="20210905 00:26:29.572" level="INFO">${username} = fld_username</msg>
+<status status="PASS" starttime="20210905 00:26:29.572" endtime="20210905 00:26:29.572"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:${username}</arg>
+<arg>${username1}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:29.572" level="INFO">Typing text 'Roxanne_C' into text field 'name:fld_username'.</msg>
+<status status="PASS" starttime="20210905 00:26:29.572" endtime="20210905 00:26:29.687"/>
+</kw>
+<kw name="Read Element Locator" library="Resources1">
+<var>${email}</var>
+<arg>Registration.email_textbox_name</arg>
+<kw name="Read Locator From Json" library="Locators">
+<var>${result}</var>
+<arg>${JsonPath}</arg>
+<msg timestamp="20210905 00:26:29.688" level="INFO">${result} = fld_email</msg>
+<status status="PASS" starttime="20210905 00:26:29.688" endtime="20210905 00:26:29.688"/>
+</kw>
+<msg timestamp="20210905 00:26:29.689" level="INFO">${email} = fld_email</msg>
+<status status="PASS" starttime="20210905 00:26:29.687" endtime="20210905 00:26:29.689"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:${email}</arg>
+<arg>${email1}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:29.689" level="INFO">Typing text 'roxanne.cooper@caxton.co.za' into text field 'name:fld_email'.</msg>
+<status status="PASS" starttime="20210905 00:26:29.689" endtime="20210905 00:26:29.796"/>
+</kw>
+<kw name="Read Element Locator" library="Resources1">
+<var>${password}</var>
+<arg>Registration.password_textbox_name</arg>
+<kw name="Read Locator From Json" library="Locators">
+<var>${result}</var>
+<arg>${JsonPath}</arg>
+<msg timestamp="20210905 00:26:29.798" level="INFO">${result} = fld_password</msg>
+<status status="PASS" starttime="20210905 00:26:29.797" endtime="20210905 00:26:29.798"/>
+</kw>
+<msg timestamp="20210905 00:26:29.798" level="INFO">${password} = fld_password</msg>
+<status status="PASS" starttime="20210905 00:26:29.797" endtime="20210905 00:26:29.798"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:${password}</arg>
+<arg>${password1}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:29.798" level="INFO">Typing text '66775' into text field 'name:fld_password'.</msg>
+<status status="PASS" starttime="20210905 00:26:29.798" endtime="20210905 00:26:29.878"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://*[@id="tab-content1"]/form/input[5]</arg>
+<arg>${password2}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:29.878" level="INFO">Typing text '66775' into text field 'xpath://*[@id="tab-content1"]/form/input[5]'.</msg>
+<status status="PASS" starttime="20210905 00:26:29.878" endtime="20210905 00:26:29.962"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@name="dob"]</arg>
+<arg>${dateofbirth}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:29.962" level="INFO">Typing text '11/30/1991' into text field '//input[@name="dob"]'.</msg>
+<status status="PASS" starttime="20210905 00:26:29.962" endtime="20210905 00:26:30.075"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://*[@id="tab-content1"]/form/input[7]</arg>
+<arg>${contact}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:30.075" level="INFO">Typing text '0731230987' into text field 'xpath://*[@id="tab-content1"]/form/input[7]'.</msg>
+<status status="PASS" starttime="20210905 00:26:30.075" endtime="20210905 00:26:30.188"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://*[@id="tab-content1"]/form/input[8]</arg>
+<arg>${address}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:30.188" level="INFO">Typing text '13 Gateway Street Maysdale Alberton ' into text field 'xpath://*[@id="tab-content1"]/form/input[8]'.</msg>
+<status status="PASS" starttime="20210905 00:26:30.188" endtime="20210905 00:26:30.323"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>add_type</arg>
+<arg>home</arg>
+<doc>Sets radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20210905 00:26:30.323" level="INFO">Selecting 'home' from radio button 'add_type'.</msg>
+<status status="PASS" starttime="20210905 00:26:30.323" endtime="20210905 00:26:30.376"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>name:sex</arg>
+<arg>Female</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20210905 00:26:30.377" level="INFO">Selecting options from selection list 'name:sex' by label Female.</msg>
+<status status="PASS" starttime="20210905 00:26:30.376" endtime="20210905 00:26:30.442"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>//select[@name="country"]</arg>
+<arg>202</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20210905 00:26:30.443" level="INFO">Selecting options from selection list '//select[@name="country"]' by value 202.</msg>
+<status status="PASS" starttime="20210905 00:26:30.443" endtime="20210905 00:26:30.523"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>//select[@name="state"]</arg>
+<arg>3240</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20210905 00:26:30.524" level="INFO">Selecting options from selection list '//select[@name="state"]' by value 3240.</msg>
+<status status="PASS" starttime="20210905 00:26:30.523" endtime="20210905 00:26:33.844"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>//select[@name="city"]</arg>
+<arg>38049</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20210905 00:26:33.844" level="INFO">Selecting options from selection list '//select[@name="city"]' by value 38049.</msg>
+<status status="PASS" starttime="20210905 00:26:33.844" endtime="20210905 00:26:37.155"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@name="zip"]</arg>
+<arg>${zipcode}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:37.156" level="INFO">Typing text '2082' into text field '//input[@name="zip"]'.</msg>
+<status status="PASS" starttime="20210905 00:26:37.155" endtime="20210905 00:26:37.239"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>./SnapShots/TC1.png</arg>
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20210905 00:26:37.578" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="SnapShots/TC1.png"&gt;&lt;img src="SnapShots/TC1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210905 00:26:37.239" endtime="20210905 00:26:37.578"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>name:terms</arg>
+<doc>Selects checkbox identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:37.578" level="INFO">Selecting checkbox 'name:terms'.</msg>
+<status status="PASS" starttime="20210905 00:26:37.578" endtime="20210905 00:26:37.659"/>
+</kw>
+<kw name="Checkbox Should Be Selected" library="SeleniumLibrary">
+<arg>name:terms</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<msg timestamp="20210905 00:26:37.659" level="INFO">Verifying checkbox 'name:terms' is selected.</msg>
+<status status="PASS" starttime="20210905 00:26:37.659" endtime="20210905 00:26:37.689"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0,200)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210905 00:26:37.689" level="INFO">Executing JavaScript:
+window.scrollTo(0,200)
+Without any arguments.</msg>
+<status status="PASS" starttime="20210905 00:26:37.689" endtime="20210905 00:26:37.693"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>./SnapShots/TC2.png</arg>
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20210905 00:26:37.989" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="SnapShots/TC2.png"&gt;&lt;img src="SnapShots/TC2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210905 00:26:37.693" endtime="20210905 00:26:37.989"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath://input[@type='submit']</arg>
+<doc>Clicks button identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:37.989" level="INFO">Clicking button 'xpath://input[@type='submit']'.</msg>
+<status status="PASS" starttime="20210905 00:26:37.989" endtime="20210905 00:26:38.592"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210905 00:26:43.598" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210905 00:26:38.593" endtime="20210905 00:26:43.598"/>
+</kw>
+<status status="PASS" starttime="20210905 00:26:29.572" endtime="20210905 00:26:43.598"/>
+</iter>
+<iter>
+<var name="${i}">4</var>
+<kw name="Read Excel Data of Cell">
+<var>${username1}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>1</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:26:43.598" level="INFO">${celldata} = Tamzin_Mc</msg>
+<status status="PASS" starttime="20210905 00:26:43.598" endtime="20210905 00:26:43.598"/>
+</kw>
+<msg timestamp="20210905 00:26:43.598" level="INFO">${username1} = Tamzin_Mc</msg>
+<status status="PASS" starttime="20210905 00:26:43.598" endtime="20210905 00:26:43.598"/>
+</kw>
+<kw name="Read Excel Data of Cell">
+<var>${email1}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>2</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:26:43.598" level="INFO">${celldata} = tammylam@gmail.com</msg>
+<status status="PASS" starttime="20210905 00:26:43.598" endtime="20210905 00:26:43.598"/>
+</kw>
+<msg timestamp="20210905 00:26:43.598" level="INFO">${email1} = tammylam@gmail.com</msg>
+<status status="PASS" starttime="20210905 00:26:43.598" endtime="20210905 00:26:43.598"/>
+</kw>
+<kw name="Read Excel Data of Cell">
+<var>${password1}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>3</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:26:43.598" level="INFO">${celldata} = 99699</msg>
+<status status="PASS" starttime="20210905 00:26:43.598" endtime="20210905 00:26:43.598"/>
+</kw>
+<msg timestamp="20210905 00:26:43.598" level="INFO">${password1} = 99699</msg>
+<status status="PASS" starttime="20210905 00:26:43.598" endtime="20210905 00:26:43.598"/>
+</kw>
+<kw name="Read Excel Data of Cell">
+<var>${password2}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>4</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:26:43.598" level="INFO">${celldata} = 99699</msg>
+<status status="PASS" starttime="20210905 00:26:43.598" endtime="20210905 00:26:43.598"/>
+</kw>
+<msg timestamp="20210905 00:26:43.598" level="INFO">${password2} = 99699</msg>
+<status status="PASS" starttime="20210905 00:26:43.598" endtime="20210905 00:26:43.598"/>
+</kw>
+<kw name="Read Excel Data of Cell">
+<var>${dateofbirth}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>5</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:26:43.604" level="INFO">${celldata} = 09/09/1990</msg>
+<status status="PASS" starttime="20210905 00:26:43.604" endtime="20210905 00:26:43.604"/>
+</kw>
+<msg timestamp="20210905 00:26:43.604" level="INFO">${dateofbirth} = 09/09/1990</msg>
+<status status="PASS" starttime="20210905 00:26:43.598" endtime="20210905 00:26:43.604"/>
+</kw>
+<kw name="Read Excel Data of Cell">
+<var>${contact}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>6</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:26:43.604" level="INFO">${celldata} = 0826576486</msg>
+<status status="PASS" starttime="20210905 00:26:43.604" endtime="20210905 00:26:43.604"/>
+</kw>
+<msg timestamp="20210905 00:26:43.604" level="INFO">${contact} = 0826576486</msg>
+<status status="PASS" starttime="20210905 00:26:43.604" endtime="20210905 00:26:43.604"/>
+</kw>
+<kw name="Read Excel Data of Cell">
+<var>${address}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>7</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:26:43.604" level="INFO">${celldata} = 10 Ave Boston Road Midrand</msg>
+<status status="PASS" starttime="20210905 00:26:43.604" endtime="20210905 00:26:43.604"/>
+</kw>
+<msg timestamp="20210905 00:26:43.604" level="INFO">${address} = 10 Ave Boston Road Midrand</msg>
+<status status="PASS" starttime="20210905 00:26:43.604" endtime="20210905 00:26:43.604"/>
+</kw>
+<kw name="Read Excel Data of Cell">
+<var>${zipcode}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>8</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:26:43.604" level="INFO">${celldata} = 2839</msg>
+<status status="PASS" starttime="20210905 00:26:43.604" endtime="20210905 00:26:43.604"/>
+</kw>
+<msg timestamp="20210905 00:26:43.604" level="INFO">${zipcode} = 2839</msg>
+<status status="PASS" starttime="20210905 00:26:43.604" endtime="20210905 00:26:43.604"/>
+</kw>
+<kw name="Read Element Locator" library="Resources1">
+<var>${username}</var>
+<arg>Registration.username_textbox_name</arg>
+<kw name="Read Locator From Json" library="Locators">
+<var>${result}</var>
+<arg>${JsonPath}</arg>
+<msg timestamp="20210905 00:26:43.604" level="INFO">${result} = fld_username</msg>
+<status status="PASS" starttime="20210905 00:26:43.604" endtime="20210905 00:26:43.604"/>
+</kw>
+<msg timestamp="20210905 00:26:43.604" level="INFO">${username} = fld_username</msg>
+<status status="PASS" starttime="20210905 00:26:43.604" endtime="20210905 00:26:43.604"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:${username}</arg>
+<arg>${username1}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:43.604" level="INFO">Typing text 'Tamzin_Mc' into text field 'name:fld_username'.</msg>
+<status status="PASS" starttime="20210905 00:26:43.604" endtime="20210905 00:26:43.695"/>
+</kw>
+<kw name="Read Element Locator" library="Resources1">
+<var>${email}</var>
+<arg>Registration.email_textbox_name</arg>
+<kw name="Read Locator From Json" library="Locators">
+<var>${result}</var>
+<arg>${JsonPath}</arg>
+<msg timestamp="20210905 00:26:43.695" level="INFO">${result} = fld_email</msg>
+<status status="PASS" starttime="20210905 00:26:43.695" endtime="20210905 00:26:43.695"/>
+</kw>
+<msg timestamp="20210905 00:26:43.695" level="INFO">${email} = fld_email</msg>
+<status status="PASS" starttime="20210905 00:26:43.695" endtime="20210905 00:26:43.695"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:${email}</arg>
+<arg>${email1}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:43.695" level="INFO">Typing text 'tammylam@gmail.com' into text field 'name:fld_email'.</msg>
+<status status="PASS" starttime="20210905 00:26:43.695" endtime="20210905 00:26:43.811"/>
+</kw>
+<kw name="Read Element Locator" library="Resources1">
+<var>${password}</var>
+<arg>Registration.password_textbox_name</arg>
+<kw name="Read Locator From Json" library="Locators">
+<var>${result}</var>
+<arg>${JsonPath}</arg>
+<msg timestamp="20210905 00:26:43.813" level="INFO">${result} = fld_password</msg>
+<status status="PASS" starttime="20210905 00:26:43.813" endtime="20210905 00:26:43.813"/>
+</kw>
+<msg timestamp="20210905 00:26:43.814" level="INFO">${password} = fld_password</msg>
+<status status="PASS" starttime="20210905 00:26:43.812" endtime="20210905 00:26:43.814"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:${password}</arg>
+<arg>${password1}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:43.814" level="INFO">Typing text '99699' into text field 'name:fld_password'.</msg>
+<status status="PASS" starttime="20210905 00:26:43.814" endtime="20210905 00:26:43.900"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://*[@id="tab-content1"]/form/input[5]</arg>
+<arg>${password2}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:43.901" level="INFO">Typing text '99699' into text field 'xpath://*[@id="tab-content1"]/form/input[5]'.</msg>
+<status status="PASS" starttime="20210905 00:26:43.900" endtime="20210905 00:26:43.989"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@name="dob"]</arg>
+<arg>${dateofbirth}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:43.990" level="INFO">Typing text '09/09/1990' into text field '//input[@name="dob"]'.</msg>
+<status status="PASS" starttime="20210905 00:26:43.989" endtime="20210905 00:26:44.131"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://*[@id="tab-content1"]/form/input[7]</arg>
+<arg>${contact}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:44.131" level="INFO">Typing text '0826576486' into text field 'xpath://*[@id="tab-content1"]/form/input[7]'.</msg>
+<status status="PASS" starttime="20210905 00:26:44.131" endtime="20210905 00:26:44.248"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://*[@id="tab-content1"]/form/input[8]</arg>
+<arg>${address}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:44.249" level="INFO">Typing text '10 Ave Boston Road Midrand' into text field 'xpath://*[@id="tab-content1"]/form/input[8]'.</msg>
+<status status="PASS" starttime="20210905 00:26:44.248" endtime="20210905 00:26:44.373"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>add_type</arg>
+<arg>home</arg>
+<doc>Sets radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20210905 00:26:44.374" level="INFO">Selecting 'home' from radio button 'add_type'.</msg>
+<status status="PASS" starttime="20210905 00:26:44.374" endtime="20210905 00:26:44.432"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>name:sex</arg>
+<arg>Female</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20210905 00:26:44.432" level="INFO">Selecting options from selection list 'name:sex' by label Female.</msg>
+<status status="PASS" starttime="20210905 00:26:44.432" endtime="20210905 00:26:44.503"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>//select[@name="country"]</arg>
+<arg>202</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20210905 00:26:44.504" level="INFO">Selecting options from selection list '//select[@name="country"]' by value 202.</msg>
+<status status="PASS" starttime="20210905 00:26:44.503" endtime="20210905 00:26:44.591"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>//select[@name="state"]</arg>
+<arg>3240</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20210905 00:26:44.592" level="INFO">Selecting options from selection list '//select[@name="state"]' by value 3240.</msg>
+<status status="PASS" starttime="20210905 00:26:44.592" endtime="20210905 00:26:47.902"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>//select[@name="city"]</arg>
+<arg>38049</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20210905 00:26:47.902" level="INFO">Selecting options from selection list '//select[@name="city"]' by value 38049.</msg>
+<status status="PASS" starttime="20210905 00:26:47.902" endtime="20210905 00:26:51.177"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@name="zip"]</arg>
+<arg>${zipcode}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:51.178" level="INFO">Typing text '2839' into text field '//input[@name="zip"]'.</msg>
+<status status="PASS" starttime="20210905 00:26:51.177" endtime="20210905 00:26:51.267"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>./SnapShots/TC1.png</arg>
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20210905 00:26:51.610" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="SnapShots/TC1.png"&gt;&lt;img src="SnapShots/TC1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210905 00:26:51.267" endtime="20210905 00:26:51.610"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>name:terms</arg>
+<doc>Selects checkbox identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:51.610" level="INFO">Selecting checkbox 'name:terms'.</msg>
+<status status="PASS" starttime="20210905 00:26:51.610" endtime="20210905 00:26:51.688"/>
+</kw>
+<kw name="Checkbox Should Be Selected" library="SeleniumLibrary">
+<arg>name:terms</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<msg timestamp="20210905 00:26:51.689" level="INFO">Verifying checkbox 'name:terms' is selected.</msg>
+<status status="PASS" starttime="20210905 00:26:51.689" endtime="20210905 00:26:51.722"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0,200)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210905 00:26:51.722" level="INFO">Executing JavaScript:
+window.scrollTo(0,200)
+Without any arguments.</msg>
+<status status="PASS" starttime="20210905 00:26:51.722" endtime="20210905 00:26:51.728"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>./SnapShots/TC2.png</arg>
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20210905 00:26:52.019" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="SnapShots/TC2.png"&gt;&lt;img src="SnapShots/TC2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210905 00:26:51.728" endtime="20210905 00:26:52.019"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath://input[@type='submit']</arg>
+<doc>Clicks button identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:52.019" level="INFO">Clicking button 'xpath://input[@type='submit']'.</msg>
+<status status="PASS" starttime="20210905 00:26:52.019" endtime="20210905 00:26:52.627"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210905 00:26:57.643" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210905 00:26:52.627" endtime="20210905 00:26:57.643"/>
+</kw>
+<status status="PASS" starttime="20210905 00:26:43.598" endtime="20210905 00:26:57.643"/>
+</iter>
+<iter>
+<var name="${i}">5</var>
+<kw name="Read Excel Data of Cell">
+<var>${username1}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>1</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:26:57.644" level="INFO">${celldata} = Angela_P</msg>
+<status status="PASS" starttime="20210905 00:26:57.644" endtime="20210905 00:26:57.644"/>
+</kw>
+<msg timestamp="20210905 00:26:57.645" level="INFO">${username1} = Angela_P</msg>
+<status status="PASS" starttime="20210905 00:26:57.644" endtime="20210905 00:26:57.645"/>
+</kw>
+<kw name="Read Excel Data of Cell">
+<var>${email1}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>2</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:26:57.646" level="INFO">${celldata} = angela.patches@goldworld.co.za</msg>
+<status status="PASS" starttime="20210905 00:26:57.645" endtime="20210905 00:26:57.646"/>
+</kw>
+<msg timestamp="20210905 00:26:57.646" level="INFO">${email1} = angela.patches@goldworld.co.za</msg>
+<status status="PASS" starttime="20210905 00:26:57.645" endtime="20210905 00:26:57.646"/>
+</kw>
+<kw name="Read Excel Data of Cell">
+<var>${password1}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>3</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:26:57.646" level="INFO">${celldata} = 29385</msg>
+<status status="PASS" starttime="20210905 00:26:57.646" endtime="20210905 00:26:57.647"/>
+</kw>
+<msg timestamp="20210905 00:26:57.647" level="INFO">${password1} = 29385</msg>
+<status status="PASS" starttime="20210905 00:26:57.646" endtime="20210905 00:26:57.647"/>
+</kw>
+<kw name="Read Excel Data of Cell">
+<var>${password2}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>4</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:26:57.647" level="INFO">${celldata} = 29285</msg>
+<status status="PASS" starttime="20210905 00:26:57.647" endtime="20210905 00:26:57.647"/>
+</kw>
+<msg timestamp="20210905 00:26:57.648" level="INFO">${password2} = 29285</msg>
+<status status="PASS" starttime="20210905 00:26:57.647" endtime="20210905 00:26:57.648"/>
+</kw>
+<kw name="Read Excel Data of Cell">
+<var>${dateofbirth}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>5</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:26:57.649" level="INFO">${celldata} = 06/15/1982</msg>
+<status status="PASS" starttime="20210905 00:26:57.648" endtime="20210905 00:26:57.649"/>
+</kw>
+<msg timestamp="20210905 00:26:57.650" level="INFO">${dateofbirth} = 06/15/1982</msg>
+<status status="PASS" starttime="20210905 00:26:57.648" endtime="20210905 00:26:57.650"/>
+</kw>
+<kw name="Read Excel Data of Cell">
+<var>${contact}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>6</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:26:57.650" level="INFO">${celldata} = 0872239987</msg>
+<status status="PASS" starttime="20210905 00:26:57.650" endtime="20210905 00:26:57.651"/>
+</kw>
+<msg timestamp="20210905 00:26:57.651" level="INFO">${contact} = 0872239987</msg>
+<status status="PASS" starttime="20210905 00:26:57.650" endtime="20210905 00:26:57.651"/>
+</kw>
+<kw name="Read Excel Data of Cell">
+<var>${address}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>7</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:26:57.651" level="INFO">${celldata} = 808 Gillview Way Street Randburg</msg>
+<status status="PASS" starttime="20210905 00:26:57.651" endtime="20210905 00:26:57.651"/>
+</kw>
+<msg timestamp="20210905 00:26:57.652" level="INFO">${address} = 808 Gillview Way Street Randburg</msg>
+<status status="PASS" starttime="20210905 00:26:57.651" endtime="20210905 00:26:57.652"/>
+</kw>
+<kw name="Read Excel Data of Cell">
+<var>${zipcode}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>8</arg>
+<kw name="Fetch Cell Data" library="ExcelReader">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20210905 00:26:57.652" level="INFO">${celldata} = 2365</msg>
+<status status="PASS" starttime="20210905 00:26:57.652" endtime="20210905 00:26:57.652"/>
+</kw>
+<msg timestamp="20210905 00:26:57.653" level="INFO">${zipcode} = 2365</msg>
+<status status="PASS" starttime="20210905 00:26:57.652" endtime="20210905 00:26:57.653"/>
+</kw>
+<kw name="Read Element Locator" library="Resources1">
+<var>${username}</var>
+<arg>Registration.username_textbox_name</arg>
+<kw name="Read Locator From Json" library="Locators">
+<var>${result}</var>
+<arg>${JsonPath}</arg>
+<msg timestamp="20210905 00:26:57.653" level="INFO">${result} = fld_username</msg>
+<status status="PASS" starttime="20210905 00:26:57.653" endtime="20210905 00:26:57.653"/>
+</kw>
+<msg timestamp="20210905 00:26:57.654" level="INFO">${username} = fld_username</msg>
+<status status="PASS" starttime="20210905 00:26:57.653" endtime="20210905 00:26:57.654"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:${username}</arg>
+<arg>${username1}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:57.654" level="INFO">Typing text 'Angela_P' into text field 'name:fld_username'.</msg>
+<status status="PASS" starttime="20210905 00:26:57.654" endtime="20210905 00:26:57.782"/>
+</kw>
+<kw name="Read Element Locator" library="Resources1">
+<var>${email}</var>
+<arg>Registration.email_textbox_name</arg>
+<kw name="Read Locator From Json" library="Locators">
+<var>${result}</var>
+<arg>${JsonPath}</arg>
+<msg timestamp="20210905 00:26:57.784" level="INFO">${result} = fld_email</msg>
+<status status="PASS" starttime="20210905 00:26:57.783" endtime="20210905 00:26:57.784"/>
+</kw>
+<msg timestamp="20210905 00:26:57.785" level="INFO">${email} = fld_email</msg>
+<status status="PASS" starttime="20210905 00:26:57.783" endtime="20210905 00:26:57.785"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:${email}</arg>
+<arg>${email1}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:57.785" level="INFO">Typing text 'angela.patches@goldworld.co.za' into text field 'name:fld_email'.</msg>
+<status status="PASS" starttime="20210905 00:26:57.785" endtime="20210905 00:26:57.908"/>
+</kw>
+<kw name="Read Element Locator" library="Resources1">
+<var>${password}</var>
+<arg>Registration.password_textbox_name</arg>
+<kw name="Read Locator From Json" library="Locators">
+<var>${result}</var>
+<arg>${JsonPath}</arg>
+<msg timestamp="20210905 00:26:57.909" level="INFO">${result} = fld_password</msg>
+<status status="PASS" starttime="20210905 00:26:57.908" endtime="20210905 00:26:57.909"/>
+</kw>
+<msg timestamp="20210905 00:26:57.909" level="INFO">${password} = fld_password</msg>
+<status status="PASS" starttime="20210905 00:26:57.908" endtime="20210905 00:26:57.909"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:${password}</arg>
+<arg>${password1}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:57.909" level="INFO">Typing text '29385' into text field 'name:fld_password'.</msg>
+<status status="PASS" starttime="20210905 00:26:57.909" endtime="20210905 00:26:57.999"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://*[@id="tab-content1"]/form/input[5]</arg>
+<arg>${password2}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:58.000" level="INFO">Typing text '29285' into text field 'xpath://*[@id="tab-content1"]/form/input[5]'.</msg>
+<status status="PASS" starttime="20210905 00:26:57.999" endtime="20210905 00:26:58.101"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@name="dob"]</arg>
+<arg>${dateofbirth}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:58.102" level="INFO">Typing text '06/15/1982' into text field '//input[@name="dob"]'.</msg>
+<status status="PASS" starttime="20210905 00:26:58.102" endtime="20210905 00:26:58.232"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://*[@id="tab-content1"]/form/input[7]</arg>
+<arg>${contact}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:58.232" level="INFO">Typing text '0872239987' into text field 'xpath://*[@id="tab-content1"]/form/input[7]'.</msg>
+<status status="PASS" starttime="20210905 00:26:58.232" endtime="20210905 00:26:58.358"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://*[@id="tab-content1"]/form/input[8]</arg>
+<arg>${address}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:26:58.359" level="INFO">Typing text '808 Gillview Way Street Randburg' into text field 'xpath://*[@id="tab-content1"]/form/input[8]'.</msg>
+<status status="PASS" starttime="20210905 00:26:58.358" endtime="20210905 00:26:58.489"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>add_type</arg>
+<arg>home</arg>
+<doc>Sets radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20210905 00:26:58.490" level="INFO">Selecting 'home' from radio button 'add_type'.</msg>
+<status status="PASS" starttime="20210905 00:26:58.489" endtime="20210905 00:26:58.543"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>name:sex</arg>
+<arg>Female</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20210905 00:26:58.544" level="INFO">Selecting options from selection list 'name:sex' by label Female.</msg>
+<status status="PASS" starttime="20210905 00:26:58.543" endtime="20210905 00:26:58.613"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>//select[@name="country"]</arg>
+<arg>202</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20210905 00:26:58.615" level="INFO">Selecting options from selection list '//select[@name="country"]' by value 202.</msg>
+<status status="PASS" starttime="20210905 00:26:58.614" endtime="20210905 00:26:58.702"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>//select[@name="state"]</arg>
+<arg>3240</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20210905 00:26:58.702" level="INFO">Selecting options from selection list '//select[@name="state"]' by value 3240.</msg>
+<status status="PASS" starttime="20210905 00:26:58.702" endtime="20210905 00:27:01.981"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>//select[@name="city"]</arg>
+<arg>38049</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20210905 00:27:01.982" level="INFO">Selecting options from selection list '//select[@name="city"]' by value 38049.</msg>
+<status status="PASS" starttime="20210905 00:27:01.981" endtime="20210905 00:27:05.288"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@name="zip"]</arg>
+<arg>${zipcode}</arg>
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20210905 00:27:05.289" level="INFO">Typing text '2365' into text field '//input[@name="zip"]'.</msg>
+<status status="PASS" starttime="20210905 00:27:05.289" endtime="20210905 00:27:05.374"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>./SnapShots/TC1.png</arg>
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20210905 00:27:05.724" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="SnapShots/TC1.png"&gt;&lt;img src="SnapShots/TC1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210905 00:27:05.374" endtime="20210905 00:27:05.724"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>name:terms</arg>
+<doc>Selects checkbox identified by ``locator``.</doc>
+<msg timestamp="20210905 00:27:05.724" level="INFO">Selecting checkbox 'name:terms'.</msg>
+<status status="PASS" starttime="20210905 00:27:05.724" endtime="20210905 00:27:05.806"/>
+</kw>
+<kw name="Checkbox Should Be Selected" library="SeleniumLibrary">
+<arg>name:terms</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<msg timestamp="20210905 00:27:05.807" level="INFO">Verifying checkbox 'name:terms' is selected.</msg>
+<status status="PASS" starttime="20210905 00:27:05.807" endtime="20210905 00:27:05.837"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0,200)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210905 00:27:05.838" level="INFO">Executing JavaScript:
+window.scrollTo(0,200)
+Without any arguments.</msg>
+<status status="PASS" starttime="20210905 00:27:05.837" endtime="20210905 00:27:05.842"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>./SnapShots/TC2.png</arg>
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20210905 00:27:06.141" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="SnapShots/TC2.png"&gt;&lt;img src="SnapShots/TC2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210905 00:27:05.842" endtime="20210905 00:27:06.141"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath://input[@type='submit']</arg>
+<doc>Clicks button identified by ``locator``.</doc>
+<msg timestamp="20210905 00:27:06.141" level="INFO">Clicking button 'xpath://input[@type='submit']'.</msg>
+<status status="PASS" starttime="20210905 00:27:06.141" endtime="20210905 00:27:06.804"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210905 00:27:11.812" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210905 00:27:06.805" endtime="20210905 00:27:11.812"/>
+</kw>
+<status status="PASS" starttime="20210905 00:26:57.643" endtime="20210905 00:27:11.812"/>
+</iter>
+<status status="PASS" starttime="20210905 00:25:58.843" endtime="20210905 00:27:11.812"/>
+</for>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>./SnapShots/TC3.png</arg>
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20210905 00:27:12.134" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="SnapShots/TC3.png"&gt;&lt;img src="SnapShots/TC3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210905 00:27:11.813" endtime="20210905 00:27:12.134"/>
+</kw>
+<kw name="Close Browser and get Page source" library="Resources1">
+<kw name="Get Source" library="SeleniumLibrary">
+<var>${PageHTML}</var>
+<doc>Returns the entire HTML source of the current page or frame.</doc>
+<msg timestamp="20210905 00:27:12.144" level="INFO">${PageHTML} = &lt;html lang="en" class="no-js"&gt;&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"&gt; 
+    &lt;meta name="viewport" content="width=device-width, initial-scale...</msg>
+<status status="PASS" starttime="20210905 00:27:12.135" endtime="20210905 00:27:12.144"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${PageHTML}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210905 00:27:12.145" level="INFO">&lt;html lang="en" class="no-js"&gt;&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"&gt; 
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; 
+    &lt;title&gt; Login &amp;amp; Sign Up Forms&lt;/title&gt;
+    &lt;meta name="author" content="Reverie Tech"&gt;
+    &lt;link rel="stylesheet" type="text/css" href="css/demo.css"&gt;
+    &lt;link rel="stylesheet" type="text/css" href="tabs.css"&gt;
+    &lt;link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;style&gt;
+#overlay {
+ display:none; /*hidden on pageload*/
+ position:fixed; /*this will disable it from scrolling*/
+ width:100%; /*this will give the full width*/
+ height:100%; /*this will give the full height*/
+ z-index:999; /*this will keep it above all elements in the page*/
+ left:0; /*this will align it to the left*/
+ top:0; /*this will align it to the top*/
+ background:#000; /*this will give it a black background*/
+}
+
+.popup {
+ display:none; /*hidden on pageload*/
+ width:50%; /*width of popup*/
+ height:400px;  /*height of popup*/
+ padding:10px; /*padding for popup*/
+ background:#fff; /*background of popup*/
+ border:5px solid #ccc; /*border of popup*/
+ position:fixed; /*this will keep it relative to the body*/
+ z-index:9999; /*this will keep it above the overlay*/
+ top:10%; /*keep popup in center*/
+ left:25%; /*keep popup in center*/
+ color:#000000;
+
+}
+.popup .close { /* close link*/
+ float:right;
+ color:#000;
+ text-decoration:none;/*remove underline from the close link*/
+}
+.popup p { /*popup text*/
+ padding:10px 0; color:#333333; font-size:18px;
+}
+&lt;/style&gt;
+
+&lt;div id="overlay"&gt;&lt;/div&gt;
+
+&lt;div class="popup" id="popup1"&gt;
+&lt;a href="#" class="close"&gt;X&lt;/a&gt;
+&lt;p&gt;
+&lt;/p&gt;&lt;h2&gt;Terms and Conditions&lt;/h2&gt;&lt;br&gt;
+&lt;br&gt;
+
+It’s up to you to set the rules and guidelines that the user must agree to. You can think of your Terms and Conditions agreement as the legal agreement where you maintain your rights to exclude users from your app in the event that they abuse your app, and where you maintain your legal rights against potential app abusers, and so on.&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+Terms and Conditions are also known as Terms of Service or Terms of Use.&lt;br&gt;
+&lt;br&gt;
+
+This type of legal agreement can be used for both your website and your mobile app. It’s not required (it’s not recommended actually) to have separate Terms and Conditions agreements: one for your website and one for your mobile app.
+&lt;p&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+
+
+&lt;header&gt;
+	&lt;h1&gt;&lt;img src="images/logo.png" style=" width:400px;"&gt;&lt;span&gt;Login or Sign Up to start&lt;/span&gt; &lt;hr&gt;&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;div class="container"&gt;
+&lt;!--    &lt;div class="democolors"&gt;
+        &lt;a class="blue" href="index.html"&gt;blue&lt;/a&gt;
+        &lt;a class="red" href="red.html"&gt;red&lt;/a&gt;
+        &lt;a class="purple" href="purple.html"&gt;purple&lt;/a&gt;
+    &lt;/div&gt;--&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+.left{ float:left; width:30%; text-align:center;}
+.right{ float:right; width:30%; text-align:center;}
+.center{ float:left; width:40%;}
+
+@media only screen and (max-width: 767px) {
+ .left{ float:left; width:100%; text-align:center;}
+.right{ float:right; width:100%; text-align:center;     padding-top: 44px;}
+.center{ float:left; width:100%; text-align:center;}
+
+.left img, .right img{ width:100%;}
+
+}
+
+&lt;/style&gt;
+
+&lt;div class="container" style="width:90%;"&gt;
+	 &lt;div class="left"&gt;
+	      &lt;a href="https://t.me/joinchat/GgRlDbOsbSzkJElL" target="_blank"&gt;
+     &lt;img src="banner/5ff28ff0d2bc7.png"&gt;
+	 
+	      &lt;/a&gt;&lt;a href="https://www.facebook.com/groups/461729974772386/?ref=nf_target&amp;amp;hc_ref=ARSCrv_mrMgSSDWqT4b8kx3RpnWSI6K9uEhVNH-HHMESWvrSmtpqCg2IXKIcVMNXau8&amp;amp;fref=gs&amp;amp;dti=461729974772386&amp;amp;hc_location=group" target="_blank"&gt;
+     &lt;img src="banner/5e13707d13dbc.jpg"&gt;
+	 
+	      &lt;/a&gt;&lt;a href="https://www.youtube.com/channel/UCsdoSHH5bucBf_wwtvWJfnQ/playlists" target="_blank"&gt;
+     &lt;img src="banner/5e13707d13e74.jpg"&gt;
+	 
+	      &lt;/a&gt;&lt;a href="" target="_blank"&gt;
+     &lt;img src="banner/5c33a68c8a087.jpg"&gt;
+	 
+	      &lt;/a&gt;
+     &lt;/div&gt;
+    &lt;section class="tabblue center"&gt;
+		&lt;ul class="tabs blue"&gt;
+          &lt;li&gt;
+            &lt;input type="radio" name="tabs blue" id="tab1" checked=""&gt;
+            &lt;label for="tab1"&gt;Register&lt;/label&gt;
+            &lt;div id="tab-content1" class="tab-content"&gt;
+              &lt;p&gt;Register now and kick start your career as a Software Testing Pro!&lt;/p&gt;
+              
+             
+
+                                       
+                                     &lt;div class="alert alert-success"&gt;
+                   &lt;span class="vd_alert-icon"&gt;&lt;i class="fa fa-check-circle vd_green"&gt;&lt;/i&gt;&lt;/span&gt;
+                        User is successfully Register. Now You can Login                       
+                   &lt;/div&gt;
+                   
+                  
+                    
+                  
+                    
+               &lt;br&gt;
+              &lt;form method="post" name="register" action="#"&gt;
+              &lt;input name="_hiddenTXT" type="hidden" value="1"&gt;
+              
+                &lt;span class="tabaddon"&gt;&lt;i class="fa fa-user fa-2x"&gt;&lt;/i&gt;&lt;/span&gt;
+                &lt;input class="field" name="fld_username" required="" type="text" placeholder="myusername" value=""&gt;
+                &lt;span class="tabaddon"&gt;&lt;i class="fa fa-envelope fa-2x"&gt;&lt;/i&gt;&lt;/span&gt;
+                &lt;input class="field" name="fld_email" required="" type="email" placeholder="myusername@gmail.com" value=""&gt;
+                &lt;span class="tabaddon"&gt;&lt;i class="fa fa-lock fa-2x"&gt;&lt;/i&gt;&lt;/span&gt;
+                &lt;input class="field" name="fld_password" required="" type="password" placeholder="Password" value=""&gt;
+                &lt;span class="tabaddon"&gt;&lt;i class="fa fa-lock fa-2x"&gt;&lt;/i&gt;&lt;/span&gt;
+                &lt;input class="field" name="fld_cpassword" required="" type="password" placeholder="Confirm password" value=""&gt;
+                &lt;span class="tabaddon"&gt;&lt;i class="fa fa-calendar-o fa-2x"&gt;&lt;/i&gt;&lt;/span&gt;
+                &lt;input type="text" id="datepicker" name="dob" placeholder="Date of birth" value="" class="hasDatepicker"&gt;
+                
+                &lt;span class="tabaddon"&gt;&lt;i class="fa fa-phone fa-2x"&gt;&lt;/i&gt;&lt;/span&gt;
+                &lt;input type="text" placeholder="Phone" name="phone" value=""&gt;
+                
+                &lt;span class="tabaddon"&gt;&lt;i class="fa fa-map fa-2x"&gt;&lt;/i&gt;&lt;/span&gt;
+                &lt;input type="text" placeholder="Address" name="address" value=""&gt;
+                
+                Address type : &lt;input style="position:inherit;" name="add_type" type="radio" value="home"&gt;Home 
+                &lt;input style="position:inherit;" name="add_type" type="radio" value="office"&gt;Office
+                
+                &lt;select name="sex" required=""&gt;
+                  &lt;option value=""&gt;Choose Gender&lt;/option&gt;
+                  &lt;option value="1"&gt;Male&lt;/option&gt;
+                  &lt;option value="2"&gt;Female&lt;/option&gt;
+                &lt;/select&gt;
+
+                
+&lt;select name="country" class="last countries " id="countryId"&gt;
+    &lt;option value=""&gt;Select Country&lt;/option&gt;
+&lt;option value="1"&gt;Afghanistan&lt;/option&gt;&lt;option value="2"&gt;Albania&lt;/option&gt;&lt;option value="3"&gt;Algeria&lt;/option&gt;&lt;option value="4"&gt;American Samoa&lt;/option&gt;&lt;option value="5"&gt;Andorra&lt;/option&gt;&lt;option value="6"&gt;Angola&lt;/option&gt;&lt;option value="7"&gt;Anguilla&lt;/option&gt;&lt;option value="8"&gt;Antarctica&lt;/option&gt;&lt;option value="9"&gt;Antigua And Barbuda&lt;/option&gt;&lt;option value="10"&gt;Argentina&lt;/option&gt;&lt;option value="11"&gt;Armenia&lt;/option&gt;&lt;option value="12"&gt;Aruba&lt;/option&gt;&lt;option value="13"&gt;Australia&lt;/option&gt;&lt;option value="14"&gt;Austria&lt;/option&gt;&lt;option value="15"&gt;Azerbaijan&lt;/option&gt;&lt;option value="16"&gt;Bahamas The&lt;/option&gt;&lt;option value="17"&gt;Bahrain&lt;/option&gt;&lt;option value="18"&gt;Bangladesh&lt;/option&gt;&lt;option value="19"&gt;Barbados&lt;/option&gt;&lt;option value="20"&gt;Belarus&lt;/option&gt;&lt;option value="21"&gt;Belgium&lt;/option&gt;&lt;option value="22"&gt;Belize&lt;/option&gt;&lt;option value="23"&gt;Benin&lt;/option&gt;&lt;option value="24"&gt;Bermuda&lt;/option&gt;&lt;option value="25"&gt;Bhutan&lt;/option&gt;&lt;option value="26"&gt;Bolivia&lt;/option&gt;&lt;option value="27"&gt;Bosnia and Herzegovina&lt;/option&gt;&lt;option value="28"&gt;Botswana&lt;/option&gt;&lt;option value="29"&gt;Bouvet Island&lt;/option&gt;&lt;option value="30"&gt;Brazil&lt;/option&gt;&lt;option value="31"&gt;British Indian Ocean Territory&lt;/option&gt;&lt;option value="32"&gt;Brunei&lt;/option&gt;&lt;option value="33"&gt;Bulgaria&lt;/option&gt;&lt;option value="34"&gt;Burkina Faso&lt;/option&gt;&lt;option value="35"&gt;Burundi&lt;/option&gt;&lt;option value="36"&gt;Cambodia&lt;/option&gt;&lt;option value="37"&gt;Cameroon&lt;/option&gt;&lt;option value="38"&gt;Canada&lt;/option&gt;&lt;option value="39"&gt;Cape Verde&lt;/option&gt;&lt;option value="40"&gt;Cayman Islands&lt;/option&gt;&lt;option value="41"&gt;Central African Republic&lt;/option&gt;&lt;option value="42"&gt;Chad&lt;/option&gt;&lt;option value="43"&gt;Chile&lt;/option&gt;&lt;option value="44"&gt;China&lt;/option&gt;&lt;option value="45"&gt;Christmas Island&lt;/option&gt;&lt;option value="46"&gt;Cocos (Keeling) Islands&lt;/option&gt;&lt;option value="47"&gt;Colombia&lt;/option&gt;&lt;option value="48"&gt;Comoros&lt;/option&gt;&lt;option value="49"&gt;Congo&lt;/option&gt;&lt;option value="50"&gt;Congo The Democratic Republic Of The&lt;/option&gt;&lt;option value="51"&gt;Cook Islands&lt;/option&gt;&lt;option value="52"&gt;Costa Rica&lt;/option&gt;&lt;option value="53"&gt;Cote D'Ivoire (Ivory Coast)&lt;/option&gt;&lt;option value="54"&gt;Croatia (Hrvatska)&lt;/option&gt;&lt;option value="55"&gt;Cuba&lt;/option&gt;&lt;option value="56"&gt;Cyprus&lt;/option&gt;&lt;option value="57"&gt;Czech Republic&lt;/option&gt;&lt;option value="58"&gt;Denmark&lt;/option&gt;&lt;option value="59"&gt;Djibouti&lt;/option&gt;&lt;option value="60"&gt;Dominica&lt;/option&gt;&lt;option value="61"&gt;Dominican Republic&lt;/option&gt;&lt;option value="62"&gt;East Timor&lt;/option&gt;&lt;option value="63"&gt;Ecuador&lt;/option&gt;&lt;option value="64"&gt;Egypt&lt;/option&gt;&lt;option value="65"&gt;El Salvador&lt;/option&gt;&lt;option value="66"&gt;Equatorial Guinea&lt;/option&gt;&lt;option value="67"&gt;Eritrea&lt;/option&gt;&lt;option value="68"&gt;Estonia&lt;/option&gt;&lt;option value="69"&gt;Ethiopia&lt;/option&gt;&lt;option value="70"&gt;External Territories of Australia&lt;/option&gt;&lt;option value="71"&gt;Falkland Islands&lt;/option&gt;&lt;option value="72"&gt;Faroe Islands&lt;/option&gt;&lt;option value="73"&gt;Fiji Islands&lt;/option&gt;&lt;option value="74"&gt;Finland&lt;/option&gt;&lt;option value="75"&gt;France&lt;/option&gt;&lt;option value="76"&gt;French Guiana&lt;/option&gt;&lt;option value="77"&gt;French Polynesia&lt;/option&gt;&lt;option value="78"&gt;French Southern Territories&lt;/option&gt;&lt;option value="79"&gt;Gabon&lt;/option&gt;&lt;option value="80"&gt;Gambia The&lt;/option&gt;&lt;option value="81"&gt;Georgia&lt;/option&gt;&lt;option value="82"&gt;Germany&lt;/option&gt;&lt;option value="83"&gt;Ghana&lt;/option&gt;&lt;option value="84"&gt;Gibraltar&lt;/option&gt;&lt;option value="85"&gt;Greece&lt;/option&gt;&lt;option value="86"&gt;Greenland&lt;/option&gt;&lt;option value="87"&gt;Grenada&lt;/option&gt;&lt;option value="88"&gt;Guadeloupe&lt;/option&gt;&lt;option value="89"&gt;Guam&lt;/option&gt;&lt;option value="90"&gt;Guatemala&lt;/option&gt;&lt;option value="91"&gt;Guernsey and Alderney&lt;/option&gt;&lt;option value="92"&gt;Guinea&lt;/option&gt;&lt;option value="93"&gt;Guinea-Bissau&lt;/option&gt;&lt;option value="94"&gt;Guyana&lt;/option&gt;&lt;option value="95"&gt;Haiti&lt;/option&gt;&lt;option value="96"&gt;Heard and McDonald Islands&lt;/option&gt;&lt;option value="97"&gt;Honduras&lt;/option&gt;&lt;option value="98"&gt;Hong Kong S.A.R.&lt;/option&gt;&lt;option value="99"&gt;Hungary&lt;/option&gt;&lt;option value="100"&gt;Iceland&lt;/option&gt;&lt;option value="101"&gt;India&lt;/option&gt;&lt;option value="102"&gt;Indonesia&lt;/option&gt;&lt;option value="103"&gt;Iran&lt;/option&gt;&lt;option value="104"&gt;Iraq&lt;/option&gt;&lt;option value="105"&gt;Ireland&lt;/option&gt;&lt;option value="106"&gt;Israel&lt;/option&gt;&lt;option value="107"&gt;Italy&lt;/option&gt;&lt;option value="108"&gt;Jamaica&lt;/option&gt;&lt;option value="109"&gt;Japan&lt;/option&gt;&lt;option value="110"&gt;Jersey&lt;/option&gt;&lt;option value="111"&gt;Jordan&lt;/option&gt;&lt;option value="112"&gt;Kazakhstan&lt;/option&gt;&lt;option value="113"&gt;Kenya&lt;/option&gt;&lt;option value="114"&gt;Kiribati&lt;/option&gt;&lt;option value="115"&gt;Korea North&lt;/option&gt;&lt;option value="116"&gt;Korea South&lt;/option&gt;&lt;option value="117"&gt;Kuwait&lt;/option&gt;&lt;option value="118"&gt;Kyrgyzstan&lt;/option&gt;&lt;option value="119"&gt;Laos&lt;/option&gt;&lt;option value="120"&gt;Latvia&lt;/option&gt;&lt;option value="121"&gt;Lebanon&lt;/option&gt;&lt;option value="122"&gt;Lesotho&lt;/option&gt;&lt;option value="123"&gt;Liberia&lt;/option&gt;&lt;option value="124"&gt;Libya&lt;/option&gt;&lt;option value="125"&gt;Liechtenstein&lt;/option&gt;&lt;option value="126"&gt;Lithuania&lt;/option&gt;&lt;option value="127"&gt;Luxembourg&lt;/option&gt;&lt;option value="128"&gt;Macau S.A.R.&lt;/option&gt;&lt;option value="129"&gt;Macedonia&lt;/option&gt;&lt;option value="130"&gt;Madagascar&lt;/option&gt;&lt;option value="131"&gt;Malawi&lt;/option&gt;&lt;option value="132"&gt;Malaysia&lt;/option&gt;&lt;option value="133"&gt;Maldives&lt;/option&gt;&lt;option value="134"&gt;Mali&lt;/option&gt;&lt;option value="135"&gt;Malta&lt;/option&gt;&lt;option value="136"&gt;Man (Isle of)&lt;/option&gt;&lt;option value="137"&gt;Marshall Islands&lt;/option&gt;&lt;option value="138"&gt;Martinique&lt;/option&gt;&lt;option value="139"&gt;Mauritania&lt;/option&gt;&lt;option value="140"&gt;Mauritius&lt;/option&gt;&lt;option value="141"&gt;Mayotte&lt;/option&gt;&lt;option value="142"&gt;Mexico&lt;/option&gt;&lt;option value="143"&gt;Micronesia&lt;/option&gt;&lt;option value="144"&gt;Moldova&lt;/option&gt;&lt;option value="145"&gt;Monaco&lt;/option&gt;&lt;option value="146"&gt;Mongolia&lt;/option&gt;&lt;option value="147"&gt;Montserrat&lt;/option&gt;&lt;option value="148"&gt;Morocco&lt;/option&gt;&lt;option value="149"&gt;Mozambique&lt;/option&gt;&lt;option value="150"&gt;Myanmar&lt;/option&gt;&lt;option value="151"&gt;Namibia&lt;/option&gt;&lt;option value="152"&gt;Nauru&lt;/option&gt;&lt;option value="153"&gt;Nepal&lt;/option&gt;&lt;option value="154"&gt;Netherlands Antilles&lt;/option&gt;&lt;option value="155"&gt;Netherlands The&lt;/option&gt;&lt;option value="156"&gt;New Caledonia&lt;/option&gt;&lt;option value="157"&gt;New Zealand&lt;/option&gt;&lt;option value="158"&gt;Nicaragua&lt;/option&gt;&lt;option value="159"&gt;Niger&lt;/option&gt;&lt;option value="160"&gt;Nigeria&lt;/option&gt;&lt;option value="161"&gt;Niue&lt;/option&gt;&lt;option value="162"&gt;Norfolk Island&lt;/option&gt;&lt;option value="163"&gt;Northern Mariana Islands&lt;/option&gt;&lt;option value="164"&gt;Norway&lt;/option&gt;&lt;option value="165"&gt;Oman&lt;/option&gt;&lt;option value="166"&gt;Pakistan&lt;/option&gt;&lt;option value="167"&gt;Palau&lt;/option&gt;&lt;option value="168"&gt;Palestinian Territory Occupied&lt;/option&gt;&lt;option value="169"&gt;Panama&lt;/option&gt;&lt;option value="170"&gt;Papua new Guinea&lt;/option&gt;&lt;option value="171"&gt;Paraguay&lt;/option&gt;&lt;option value="172"&gt;Peru&lt;/option&gt;&lt;option value="173"&gt;Philippines&lt;/option&gt;&lt;option value="174"&gt;Pitcairn Island&lt;/option&gt;&lt;option value="175"&gt;Poland&lt;/option&gt;&lt;option value="176"&gt;Portugal&lt;/option&gt;&lt;option value="177"&gt;Puerto Rico&lt;/option&gt;&lt;option value="178"&gt;Qatar&lt;/option&gt;&lt;option value="179"&gt;Reunion&lt;/option&gt;&lt;option value="180"&gt;Romania&lt;/option&gt;&lt;option value="181"&gt;Russia&lt;/option&gt;&lt;option value="182"&gt;Rwanda&lt;/option&gt;&lt;option value="183"&gt;Saint Helena&lt;/option&gt;&lt;option value="184"&gt;Saint Kitts And Nevis&lt;/option&gt;&lt;option value="185"&gt;Saint Lucia&lt;/option&gt;&lt;option value="186"&gt;Saint Pierre and Miquelon&lt;/option&gt;&lt;option value="187"&gt;Saint Vincent And The Grenadines&lt;/option&gt;&lt;option value="188"&gt;Samoa&lt;/option&gt;&lt;option value="189"&gt;San Marino&lt;/option&gt;&lt;option value="190"&gt;Sao Tome and Principe&lt;/option&gt;&lt;option value="191"&gt;Saudi Arabia&lt;/option&gt;&lt;option value="192"&gt;Senegal&lt;/option&gt;&lt;option value="193"&gt;Serbia&lt;/option&gt;&lt;option value="194"&gt;Seychelles&lt;/option&gt;&lt;option value="195"&gt;Sierra Leone&lt;/option&gt;&lt;option value="196"&gt;Singapore&lt;/option&gt;&lt;option value="197"&gt;Slovakia&lt;/option&gt;&lt;option value="198"&gt;Slovenia&lt;/option&gt;&lt;option value="199"&gt;Smaller Territories of the UK&lt;/option&gt;&lt;option value="200"&gt;Solomon Islands&lt;/option&gt;&lt;option value="201"&gt;Somalia&lt;/option&gt;&lt;option value="202"&gt;South Africa&lt;/option&gt;&lt;option value="203"&gt;South Georgia&lt;/option&gt;&lt;option value="204"&gt;South Sudan&lt;/option&gt;&lt;option value="205"&gt;Spain&lt;/option&gt;&lt;option value="206"&gt;Sri Lanka&lt;/option&gt;&lt;option value="207"&gt;Sudan&lt;/option&gt;&lt;option value="208"&gt;Suriname&lt;/option&gt;&lt;option value="209"&gt;Svalbard And Jan Mayen Islands&lt;/option&gt;&lt;option value="210"&gt;Swaziland&lt;/option&gt;&lt;option value="211"&gt;Sweden&lt;/option&gt;&lt;option value="212"&gt;Switzerland&lt;/option&gt;&lt;option value="213"&gt;Syria&lt;/option&gt;&lt;option value="214"&gt;Taiwan&lt;/option&gt;&lt;option value="215"&gt;Tajikistan&lt;/option&gt;&lt;option value="216"&gt;Tanzania&lt;/option&gt;&lt;option value="217"&gt;Thailand&lt;/option&gt;&lt;option value="218"&gt;Togo&lt;/option&gt;&lt;option value="219"&gt;Tokelau&lt;/option&gt;&lt;option value="220"&gt;Tonga&lt;/option&gt;&lt;option value="221"&gt;Trinidad And Tobago&lt;/option&gt;&lt;option value="222"&gt;Tunisia&lt;/option&gt;&lt;option value="223"&gt;Turkey&lt;/option&gt;&lt;option value="224"&gt;Turkmenistan&lt;/option&gt;&lt;option value="225"&gt;Turks And Caicos Islands&lt;/option&gt;&lt;option value="226"&gt;Tuvalu&lt;/option&gt;&lt;option value="227"&gt;Uganda&lt;/option&gt;&lt;option value="228"&gt;Ukraine&lt;/option&gt;&lt;option value="229"&gt;United Arab Emirates&lt;/option&gt;&lt;option value="230"&gt;United Kingdom&lt;/option&gt;&lt;option value="231"&gt;United States&lt;/option&gt;&lt;option value="232"&gt;United States Minor Outlying Islands&lt;/option&gt;&lt;option value="233"&gt;Uruguay&lt;/option&gt;&lt;option value="234"&gt;Uzbekistan&lt;/option&gt;&lt;option value="235"&gt;Vanuatu&lt;/option&gt;&lt;option value="236"&gt;Vatican City State (Holy See)&lt;/option&gt;&lt;option value="237"&gt;Venezuela&lt;/option&gt;&lt;option value="238"&gt;Vietnam&lt;/option&gt;&lt;option value="239"&gt;Virgin Islands (British)&lt;/option&gt;&lt;option value="240"&gt;Virgin Islands (US)&lt;/option&gt;&lt;option value="241"&gt;Wallis And Futuna Islands&lt;/option&gt;&lt;option value="242"&gt;Western Sahara&lt;/option&gt;&lt;option value="243"&gt;Yemen&lt;/option&gt;&lt;option value="244"&gt;Yugoslavia&lt;/option&gt;&lt;option value="245"&gt;Zambia&lt;/option&gt;&lt;option value="246"&gt;Zimbabwe&lt;/option&gt;&lt;/select&gt;
+&lt;select name="state" class="states" id="stateId"&gt;
+     &lt;option value=""&gt;Select State&lt;/option&gt;
+&lt;/select&gt;
+&lt;select name="city" class="last cities" id="cityId"&gt;
+   &lt;option value=""&gt;Select City&lt;/option&gt;
+&lt;/select&gt;
+
+ &lt;span class="tabaddon"&gt;&lt;i class="fa fa-map fa-2x"&gt;&lt;/i&gt;&lt;/span&gt;
+ &lt;input type="text" placeholder="Zip code" name="zip"&gt;     
+                
+                &lt;div class="btn"&gt;
+                  &lt;input type="checkbox" name="terms" required=""&gt;
+                  &lt;em&gt;I agree with terms and conditions &lt;a href="#" style=" color:#fff;font-size: 21px;" class="displayPopup"&gt;Read Detail&lt;/a&gt; &lt;/em&gt;
+                  &lt;input type="submit" value="Sign up"&gt;
+                &lt;/div&gt;
+              &lt;/form&gt;
+            &lt;/div&gt;
+          &lt;/li&gt;
+      	  &lt;li&gt;
+            &lt;input type="radio" name="tabs blue" id="tab2"&gt;
+            &lt;label for="tab2"&gt;Login&lt;/label&gt;
+            &lt;div id="tab-content2" class="tab-content"&gt;
+              &lt;form method="post" name="register" action=""&gt;
+               &lt;input name="_hidCheckSubmit" type="hidden" value="2"&gt;
+                &lt;span class="tabaddon"&gt;&lt;i class="fa fa-envelope fa-2x"&gt;&lt;/i&gt;&lt;/span&gt;
+                &lt;input class="field" name="_txtUserName" required="" type="text" placeholder="Username" value=""&gt;
+                &lt;span class="tabaddon"&gt;&lt;i class="fa fa-lock fa-2x"&gt;&lt;/i&gt;&lt;/span&gt;
+                &lt;input class="field" name="_txtPassword" required="" type="password" placeholder="mypassword" value=""&gt;
+                &lt;div class="btn"&gt;
+                  &lt;input type="checkbox" name="terms"&gt;
+                  &lt;em&gt;Keep me logged in &lt;/em&gt;
+                  &lt;input type="submit" value="Login"&gt;
+                &lt;/div&gt;
+              &lt;/form&gt;
+            &lt;/div&gt;
+          &lt;/li&gt;
+          	
+          
+          
+          
+          
+        
+	&lt;/ul&gt;
+	&lt;/section&gt;
+    
+  &lt;div class="right"&gt;
+    &lt;a href="https://www.facebook.com/groups/1319017341783803" target="_blank"&gt;
+  &lt;img src="banner/5ff2a7e5774f5.png"&gt;
+    &lt;/a&gt;&lt;a href="" target="_blank"&gt;
+  &lt;img src="banner/5c33a332785bb.jpg"&gt;
+    &lt;/a&gt;&lt;a href="https://api.whatsapp.com/send?phone=918743913121&amp;amp;text=Hello,%20i%20am%20interested%20to%20purchase%20video%20course" target="_blank"&gt;
+  &lt;img src="banner/5e13707d13fe4.jpg"&gt;
+    &lt;/a&gt;&lt;a href="https://www.google.com/search?client=firefox-b-ab&amp;amp;q=testing+world#lrd=0x390ce45bd130c3e3:0x2cbebc3a19808103,1,,," target="_blank"&gt;
+  &lt;img src="banner/5c33a68c8a29f.jpg"&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+    
+    
+&lt;/div&gt;
+
+  &lt;footer&gt;
+	&lt;p&gt;Login &amp;amp; Sign Up &lt;/p&gt;
+
+&lt;/footer&gt; 
+
+&lt;style&gt;
+select[disabled]{
+  color:#aaa;
+}
+&lt;/style&gt;
+
+
+
+
+
+ &lt;link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"&gt;
+  &lt;script src="https://code.jquery.com/jquery-1.12.4.js"&gt;&lt;/script&gt;
+  &lt;script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"&gt;&lt;/script&gt;
+  &lt;script&gt;
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  &lt;/script&gt;
+  
+  
+  &lt;script src="js/location.js"&gt;&lt;/script&gt;  
+  
+  
+  &lt;script&gt;
+  $(function() { //document ready
+    $(".displayPopup").on("click", function() { //click event of the button
+        $("#overlay").fadeTo(100, .3); //this will show the overlay awith a crossbrowser transparency
+        $("#popup1").show(); // show popup1
+        return false; //disable event propogation (avoid addition of "#" to url)
+    })
+ 
+    $(".popup .close").on("click", function() { //click event of the close button in popup
+        $("#overlay").hide(); //hide overlay
+        $(".popup").hide(); //hide popup
+        return false; //disable event propogation (avoid addition of "#" to url)
+    })
+})
+  &lt;/script&gt;
+  
+
+
+
+
+&lt;div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</msg>
+<status status="PASS" starttime="20210905 00:27:12.144" endtime="20210905 00:27:12.145"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210905 00:27:12.146" endtime="20210905 00:27:14.404"/>
+</kw>
+<status status="PASS" starttime="20210905 00:27:12.134" endtime="20210905 00:27:14.404"/>
+</kw>
+<doc>This test cases is to check registration functionality of Application</doc>
+<status status="PASS" starttime="20210905 00:25:35.770" endtime="20210905 00:27:14.404"/>
+</test>
+<status status="PASS" starttime="20210905 00:25:33.402" endtime="20210905 00:27:14.404"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TC 002 DropdownList">TC 002 DropdownList</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
