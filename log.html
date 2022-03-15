@@ -5,7 +5,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="Robot Framework 4.1 (Python 3.9.6 on win32)" name="Generator">
+<meta content="Robot Framework 4.1.2 (Python 3.10.1 on win32)" name="Generator">
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKcAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAqAAAAAAAAAAAAAAAAAAAALIAAAD/AAAA4AAAANwAAADcAAAA3AAAANwAAADcAAAA3AAAANwAAADcAAAA4AAAAP8AAACxAAAAAAAAAKYAAAD/AAAAuwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC/AAAA/wAAAKkAAAD6AAAAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN8AAAD/AAAA+gAAAMMAAAAAAAAAAgAAAGsAAABrAAAAawAAAGsAAABrAAAAawAAAGsAAABrAAAADAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAIsAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAANEAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAAAAAAAAMgAAADIAAAAyAAAAMgAAADIAAAAyAAAAMgAAADIAAAAFAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAADwAAAB8AAAAAAAAAGAAAABcAAAAAAAAAH8AAABKAAAAAAAAAAAAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAADCAAAA/wAAACkAAADqAAAA4QAAAAAAAAD7AAAA/wAAALAAAAAGAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAIwAAAP4AAAD/AAAA/wAAAGAAAAAAAAAAAAAAAMkAAAD/AAAAigAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAAAAAAAIAAAAcAAAABkAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAA2gAAAP8AAAD7AAAAywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN4AAAD/AAAAqwAAAP8AAACvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALIAAAD/AAAAsgAAAAAAAAC5AAAA/wAAAMoAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMkAAAD/AAAAvAAAAAAAAAAAAAAAAAAAAKwAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAArQAAAAAAAAAAwAMAAIABAAAf+AAAP/wAAD/8AAAgBAAAP/wAAD/8AAA//AAAJIwAADHEAAA//AAAP/wAAB/4AACAAQAAwAMAAA==">
 <style media="all" type="text/css">
 /* Generic and misc styles */
@@ -1388,7 +1388,10 @@ window.testdata = function () {
     function createBodyItem(parent, element, strings, index) {
         if (element[0] == MESSAGE_TYPE)
             return createMessage(element, strings);
-        return createKeyword(parent, element, strings, index);
+        var messages = util.filter(parent.children(), function (child) {
+            return child.type == 'message';
+        })
+        return createKeyword(parent, element, strings, index - messages.length);
     }
     function createKeyword(parent, element, strings, index) {
         var kw = model.Keyword({
@@ -1796,25 +1799,25 @@ function stopPropagation(event) {
 window.output = {};
 </script>
 <script type="text/javascript">
-window.output["suite"] = [1,2,3,0,[],[0,0,949],[],[[4,0,0,[],[0,130,819,5],[[0,6,7,0,8,9,0,0,[1,130,0],[[8,130,2,10]]],[0,11,7,0,12,13,14,0,[0,130,819],[[8,949,2,15],[8,949,2,16],[8,949,5,5]]],[0,17,18,0,19,20,21,0,[3,949,0],[]],[0,22,18,0,23,24,0,0,[3,949,0],[]]]]],[],[1,0,1,0]];
+window.output["suite"] = [1,2,3,0,[],[0,0,15139],[],[[4,0,0,[],[0,3126,11984,5],[[0,6,0,0,0,7,0,0,[0,3128,11976],[[0,8,9,0,10,11,0,0,[1,3128,6825],[[8,3129,2,12]]],[0,13,9,0,14,0,0,0,[1,9954,136],[]],[0,15,16,0,17,18,0,0,[1,10091,5001],[[8,15092,2,19]]],[0,20,9,0,21,22,0,0,[0,15092,5],[[8,15097,5,5]]],[0,20,9,0,21,23,0,0,[3,15098,0],[]],[0,24,9,0,25,26,0,0,[3,15098,1],[]],[0,15,16,0,17,27,0,0,[3,15099,0],[]],[0,28,9,0,29,30,0,0,[3,15099,0],[]],[0,15,16,0,17,27,0,0,[3,15099,0],[]],[0,20,9,0,21,31,0,0,[3,15100,0],[]],[0,24,9,0,25,32,0,0,[3,15100,0],[]],[0,15,16,0,17,27,0,0,[3,15101,1],[]],[0,28,9,0,29,33,0,0,[3,15102,0],[]],[0,28,9,0,29,34,0,0,[3,15102,1],[]],[0,28,9,0,29,35,0,0,[3,15103,0],[]],[0,28,9,0,29,36,0,0,[3,15103,0],[]]]]]]],[],[1,0,1,0]];
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
 </script>
 <script type="text/javascript">
-window.output["strings"] = window.output["strings"].concat(["*","*TC 009 Get Request","*C:\\Users\\user\\PycharmProjects\\pythonProject\\pythonProject\\RobotAutomation\\TestCases\\TC_009_Get_Request.robot","*TestCases/TC_009_Get_Request.robot","*TC_009_Fetch_Student_details_by_id","*HTTPError: 404 Client Error: Not Found for url: <a href=\"http://thetestingworldapi.com/studentsDetails/28\">http://thetestingworldapi.com/studentsDetails/28\x3c/a>","*Create Session","*RequestsLibrary","*<p>Create Session: create a HTTP session to a server\x3c/p>","*FetchData, ${App_Base_URL}","eNptjDsOwjAQRK+yB7AINZIrUEoaTrAkQ7zCyUbeNR8h7o6iUGa6p3kzxwJ2mQa6wEx0omoLHYizsMUW3qUTOweqJcfkPh+axhMctsyeWnLPs+w6HZtACdyjWPx8A22lU70L1p6rp3jWCYFcRmj1P81FX4u00gNFbu/YcjZsn/a41iHu6Qc0xD/Q","*Get On Session","*<p>Sends a GET request on a previously created HTTP Session.\x3c/p>","*FetchData, studentsDetails/${StudentID}","*${response}","*GET Request : url=http://thetestingworldapi.com/studentsDetails/28 \n path_url=/studentsDetails/28 \n headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} \n body=None \n ","eNqdVm1v2zgM/t5fwTNwzQbEdpKmW2vDwPXaXjug7Yomu5ePis3EQmRJJ8l5uWL//Sg7TZN2O/QWIIlMUQ8fkiLpq8sxPKDVSlqEBGojstI5ncSxK9GhdVzOlsqIgmke5aqKrasLlM5eoGNc2HhwAgdgHXO1zYa9YRcMMqtkdqcc/KZqWdB2iaxAY7PHzjnLSwzPlXRGiU4CHW34gjnsdKHjpYQcjtca/ZbDlYtLV4kU8pIZiy6r3TQ88bojNAs0XuuW50ZZNXXhp0+j+CQ69tt/hmdW36ELfyezXEmvOIx60VHvqH/aKtyrJRoswl/XfvNsdB/dXY5fboX3Au3cKzSLP7j0GheeMMlGtexC7xhGqGHQG/TpJxkOk6MPcHU73vXoBuXMlf5I/3Rw2vlKIZmoYp0dCpf+dPH5fPzX/SV4Tw9nLj3w0u0D0KcRUAi3gieh406gl45LpLhbVZscIWdSUvAnCFMf/8hrxlvVPYCKkgiSVZgFC45LrYwLIG9ZZ8GSF67MClzwHMPmIYD4FYZ16xfIjXPwOCWccMoqLtZJQIkomGRB2kiXyGelS6QyFROtyPJ/MIHoI1ZproQyyUSwfJ76WD199P/A3MWomJlxGTqlEwiP9errDtO3QE6UKN4KeN2HR/gBz/sn2m1s0NWDXcTBDyIOt4jEVym5C6oNvvCc7qpVgtmgG9zUOS8YtBIMurdKKqtZjrvofUJv45D0Us2KghpF0ouOKX+CSwzLlpZnsWM3oiNzNBvbG+rQBBhartCG2Bd/WGCuDHNUwAlIJTHdRVq0pQ2Pm3Mzw9Z7CmiMIkubZE2Uc6pKoN/Tq321lWayYBNBEYGXZql+0Hh/Unh1IzaEJVusaV0bSw9acSoek+7G+pcKC87A5gZRAtmCdxVbtQWVwIejU716D4/P+m1yYLM/HHrCoMjdqVDLBFjtVArLkjsMm6wk/kC4NEyTWJmiWVIcqRHPQy/YY/NmYsOP/01scNIQ+yZ003L2G0Mj2naxrahpFZNZE0rqON6r4Fljr89QmvyOX1/3/aodAnDZ5JlL6MQdONNa8LxJXtP4StPyzfq93s/gr27WbxOXWS7o+BNk3GK+tlsOvLxZ8rf1Wr49ELeH23Bs+L+24G8WTCmTWXBmOBNduEai5siPLlyhxAX907AZMWnDB5zVgpkuWP9k0fApfCdik4bHBVKCuW6rqGHSyK/H43uggR3BnkNrVQOjNAul5lTR5JaBd/Sl6gM1Be4sFKiRykLmHO17imUtCijZAikKdI0MVnRXiy6Jikbdjxc/wOXMS32mLJVZRbOGGeo8UFMB0ZuEL8AIDlmlUzmxOqWBy6wn5gcT0MsIURFUAJ7Ul4eb5rpWbI5ga6LrSubImse2GoWgFko1bDB3Yh29Dsw26+3qe6F7wL9regUiMLK4G7xvvAW9DTf2ud6vgNiXwHbwx8+T/wD+BVj0BpU=","*Convert To String","*BuiltIn","*<p>Converts the given item to a Unicode string.\x3c/p>","*${response.status_code}","*${actual_code}","*Should Be Equal","*<p>Fails if the given objects are unequal.\x3c/p>","*${actual_code}, 200"]);
+window.output["strings"] = window.output["strings"].concat(["*","*Claims Portal","*C:\\Users\\Aisha\\PycharmProjects\\pythonProject\\pythonProject\\aYoWebApps\\PortalTestCases\\Claims_Portal.robot","*../aYoWebApps/PortalTestCases/Claims_Portal.robot","*TC_001 Claims Portal","*Variable '${UsernameTextBox}' not found.","*Log in to Claims Portal","*ayotest, password, 44795","*Open Browser","*SeleniumLibrary","*<p>Opens a new browser instance to the optional <code>url\x3c/code>.\x3c/p>","*${PortalURL}, ${Browser}","*Opening browser 'chrome' to base url '<a href=\"https://ete3.ayo.co.ci/claims-portal/\">https://ete3.ayo.co.ci/claims-portal/\x3c/a>'.","*Maximize Browser Window","*<p>Maximizes current browser window.\x3c/p>","*Sleep","*BuiltIn","*<p>Pauses the test executed for the given time.\x3c/p>","*5 seconds","*Slept 5 seconds","*Input Text","*<p>Types the given <code>text\x3c/code> into the text field identified by <code>locator\x3c/code>.\x3c/p>","*${UsernameTextBox}, ${username}","*${PasswordTextBox}, ${password}","*Click Button","*<p>Clicks the button identified by <code>locator\x3c/code>.\x3c/p>","*${LoginButton}","*10 seconds","*Click Element","*<p>Click the element identified by <code>locator\x3c/code>.\x3c/p>","*${EnglishButton}","*${ClaimsTextBox}, ${ClaimNumber}","*${SearchButton}","*${RequestNewDocumentButton}","*${DropdownButton}","*${SelectCheckBox}","*${AddDocumentButton}","eNq1lE2P0zAQhu/7K6weNq2UTb8Aiaw4VLSrRaxKtVuEFoIiJ5k2po7Hsp1uw6/HdhboB3Aqp2TG9szzvp5kphQqwgRZMQ4keBsnHzUonUyYLmmyaPKSqmqh8BvkRieyMSWK5/Aooo/4CbKJlDq5B421ykH7Yu+heUJV6EhhhiYgKAhnAsgoJu8qicowsbaZTFHVnItgCdpMqbHnbX3K3Wskm4CsqJVZxOTGPuZobrAWxcxZEJMv9imQjL6SORJd52VriXWnYMqWR9XEDq/v8foerz/FvK5AGN23zfuT2mBFDUNx5ULX9aEEsKsthv6ViXZc74KLpaI5ZDTfkG6F2hDbxxYjOeWccKpNL74gnpV0/qcvnbC9kXHoJuGSm+sKi5rD5dpcWwBCnjbkDUEJQjY7HnGkRWqvdJMhbrqdc1rS6e0LXngZ42g4SOx8JJoZuJLWLbq2o/UTJ1FAC1AJ7HLg+2KGL72cA1qvpj1gFc3ckXsfdd1lC1pB6JdTFLwJyQZAptuMhmejGo5eeKo0ZYKZNPVAGvgqoiov2RYsVrqlnBXUQPqc667E+Xx5/aoFOG7iSX5DfGbS9dvzJVDBvyi+M+n2Hmod/EXsStoWDCMH61uE/muzYwe9i8Xj8vbDfDFZ3rrxP+z0kCsm7bz7f0kEOzjZ0c7+eDiILNHJ6vTuTp8kLf5x7k97Do3+AaJa05Y=","eNqljr0Kg1AMRl8lm5trwU3EXaQ/FC5ItCmm3HsjSYT69m1pu3TteL7hO6dVFQXOcOVIUDRVOBiphZptxtBt04yaOpUbTW5h2XyW/MEfwrOcaKyXxUIn6hj3ZN6gkYUmIicb3nOpMooXIBkiZ4JdBUdUxvHp/zuif33Xq0tCZ8mhJ5NVJ/o2WRspUXYrN0yxgIuQQRYHurN5+QCdhWe6"]);
 </script>
 <script type="text/javascript">
-window.output["stats"] = [[{"elapsed":"00:00:01","fail":1,"label":"All Tests","pass":0,"skip":0}],[],[{"elapsed":"00:00:01","fail":1,"id":"s1","label":"TC 009 Get Request","name":"TC 009 Get Request","pass":0,"skip":0}]];
+window.output["stats"] = [[{"elapsed":"00:00:12","fail":1,"label":"All Tests","pass":0,"skip":0}],[],[{"elapsed":"00:00:15","fail":1,"id":"s1","label":"Claims Portal","name":"Claims Portal","pass":0,"skip":0}]];
 </script>
 <script type="text/javascript">
-window.output["errors"] = [];
+window.output["errors"] = [[8,1634,4,37],[8,1667,4,38]];
 </script>
 <script type="text/javascript">
-window.output["baseMillis"] = 1630874676422;
+window.output["baseMillis"] = 1641907211535;
 </script>
 <script type="text/javascript">
-window.output["generated"] = 964;
+window.output["generated"] = 15196;
 </script>
 <script type="text/javascript">
 window.output["expand_keywords"] = null;
