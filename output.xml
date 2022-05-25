@@ -1,133 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.2 (Python 3.10.1 on win32)" generated="20220111 15:20:11.531" rpa="false" schemaversion="2">
-<suite id="s1" name="Claims Portal" source="C:\Users\Aisha\PycharmProjects\pythonProject\pythonProject\aYoWebApps\PortalTestCases\Claims_Portal.robot">
-<test id="s1-t1" name="TC_001 Claims Portal">
-<kw name="Log in to Claims Portal">
-<arg>ayotest</arg>
-<arg>password</arg>
-<arg>44795</arg>
+<robot generator="Robot 4.1.2 (Python 3.10.1 on win32)" generated="20220526 00:32:02.433" rpa="false" schemaversion="2">
+<suite id="s1" name="TC 001 Start Close Browser" source="C:\Users\Aisha\PycharmProjects\pythonProject\pythonProject\RobotAutomation\TestCases\TC_001_Start_Close_Browser.robot">
+<test id="s1-t1" name="Robot First Test Case">
 <kw name="Open Browser" library="SeleniumLibrary">
-<arg>${PortalURL}</arg>
+<arg>${URL}</arg>
 <arg>${Browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220111 15:20:14.664" level="INFO">Opening browser 'chrome' to base url 'https://ete3.ayo.co.ci/claims-portal/'.</msg>
-<status status="PASS" starttime="20220111 15:20:14.663" endtime="20220111 15:20:21.488"/>
+<msg timestamp="20220526 00:32:02.831" level="INFO">Opening browser 'Chrome' to base url 'http://www.thetestingworld.com/testings'.</msg>
+<status status="PASS" starttime="20220526 00:32:02.831" endtime="20220526 00:32:09.410"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220111 15:20:21.489" endtime="20220111 15:20:21.625"/>
+<status status="PASS" starttime="20220526 00:32:09.410" endtime="20220526 00:32:09.546"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>5 seconds</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220111 15:20:26.627" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20220111 15:20:21.626" endtime="20220111 15:20:26.627"/>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>20 seconds</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20220526 00:32:09.548" endtime="20220526 00:32:09.551"/>
+</kw>
+<kw name="Get Selenium Timeout" library="SeleniumLibrary">
+<var>${tm}</var>
+<doc>Gets the timeout that is used by various keywords.</doc>
+<msg timestamp="20220526 00:32:09.553" level="INFO">${tm} = 20 seconds</msg>
+<status status="PASS" starttime="20220526 00:32:09.552" endtime="20220526 00:32:09.553"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${tm}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220526 00:32:09.554" endtime="20220526 00:32:09.555"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Testing</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220526 00:32:09.555" endtime="20220526 00:32:09.576"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>${UsernameTextBox}</arg>
-<arg>${username}</arg>
+<arg>name:fld_username</arg>
+<arg>Aisha_H</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220111 15:20:26.632" level="FAIL">Variable '${UsernameTextBox}' not found.</msg>
-<status status="FAIL" starttime="20220111 15:20:26.627" endtime="20220111 15:20:26.632"/>
+<msg timestamp="20220526 00:32:09.577" level="INFO">Typing text 'Aisha_H' into text field 'name:fld_username'.</msg>
+<status status="PASS" starttime="20220526 00:32:09.576" endtime="20220526 00:32:09.762"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>${PasswordTextBox}</arg>
-<arg>${password}</arg>
+<arg>xpath://input[@name='fld_email']</arg>
+<arg>ash.hlatshwayo22@gmail.com</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20220111 15:20:26.633" endtime="20220111 15:20:26.633"/>
+<msg timestamp="20220526 00:32:09.763" level="INFO">Typing text 'ash.hlatshwayo22@gmail.com' into text field 'xpath://input[@name='fld_email']'.</msg>
+<status status="PASS" starttime="20220526 00:32:09.763" endtime="20220526 00:32:09.912"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>add_type</arg>
+<arg>office</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20220526 00:32:09.912" level="INFO">Selecting 'office' from radio button 'add_type'.</msg>
+<status status="PASS" starttime="20220526 00:32:09.912" endtime="20220526 00:32:09.983"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>name:terms</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20220526 00:32:09.984" level="INFO">Selecting checkbox 'name:terms'.</msg>
+<status status="PASS" starttime="20220526 00:32:09.984" endtime="20220526 00:32:10.072"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
-<arg>${LoginButton}</arg>
+<arg>xpath://input[@type='submit']</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20220111 15:20:26.633" endtime="20220111 15:20:26.634"/>
+<msg timestamp="20220526 00:32:10.073" level="INFO">Clicking button 'xpath://input[@type='submit']'.</msg>
+<status status="PASS" starttime="20220526 00:32:10.073" endtime="20220526 00:32:10.182"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>10 seconds</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20220111 15:20:26.634" endtime="20220111 15:20:26.634"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${EnglishButton}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20220111 15:20:26.634" endtime="20220111 15:20:26.634"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>10 seconds</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20220111 15:20:26.634" endtime="20220111 15:20:26.634"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${ClaimsTextBox}</arg>
-<arg>${ClaimNumber}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20220111 15:20:26.635" endtime="20220111 15:20:26.635"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${SearchButton}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20220111 15:20:26.635" endtime="20220111 15:20:26.635"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>10 seconds</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20220111 15:20:26.636" endtime="20220111 15:20:26.637"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${RequestNewDocumentButton}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20220111 15:20:26.637" endtime="20220111 15:20:26.637"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${DropdownButton}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20220111 15:20:26.637" endtime="20220111 15:20:26.638"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${SelectCheckBox}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20220111 15:20:26.638" endtime="20220111 15:20:26.638"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${AddDocumentButton}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20220111 15:20:26.638" endtime="20220111 15:20:26.638"/>
-</kw>
-<status status="FAIL" starttime="20220111 15:20:14.663" endtime="20220111 15:20:26.639"/>
-</kw>
-<status status="FAIL" starttime="20220111 15:20:14.661" endtime="20220111 15:20:26.645">Variable '${UsernameTextBox}' not found.</status>
+<status status="PASS" starttime="20220526 00:32:02.830" endtime="20220526 00:32:10.183"/>
 </test>
-<status status="FAIL" starttime="20220111 15:20:11.535" endtime="20220111 15:20:26.674"/>
+<status status="PASS" starttime="20220526 00:32:02.437" endtime="20220526 00:32:10.186"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Claims Portal">Claims Portal</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="TC 001 Start Close Browser">TC 001 Start Close Browser</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20220111 15:20:13.169" level="ERROR">Error in file 'C:\Users\Aisha\PycharmProjects\pythonProject\pythonProject\aYoWebApps\Resources\UserKeywords.robot' on line 2: Importing library 'C:\Users\Aisha\PycharmProjects\pythonProject\pythonProject\aYoWebApps\TestData\PortalData.py' failed: FileNotFoundError: [Errno 2] No such file or directory: 'C:/Users/Aisha/Documents/aYo/Automation-aYo/DataSheets/PortalsDataSheet.xlsx'
-Traceback (most recent call last):
-  File "C:\Users\Aisha\PycharmProjects\pythonProject\pythonProject\aYoWebApps\TestData\PortalData.py", line 3, in &lt;module&gt;
-    wk = openpyxl.load_workbook("C:/Users/Aisha/Documents/aYo/Automation-aYo/DataSheets/PortalsDataSheet.xlsx")
-  File "C:\Python3.10\lib\site-packages\openpyxl\reader\excel.py", line 315, in load_workbook
-    reader = ExcelReader(filename, read_only, keep_vba,
-  File "C:\Python3.10\lib\site-packages\openpyxl\reader\excel.py", line 124, in __init__
-    self.archive = _validate_archive(fn)
-  File "C:\Python3.10\lib\site-packages\openpyxl\reader\excel.py", line 96, in _validate_archive
-    archive = ZipFile(filename, 'r')
-  File "C:\Python3.10\lib\zipfile.py", line 1240, in __init__
-    self.fp = io.open(file, filemode)
-PYTHONPATH:
-  C:\Python3.10\Scripts\robot.exe
-  C:\Python3.10\python310.zip
-  C:\Python3.10\DLLs
-  C:\Python3.10\lib
-  C:\Python3.10
-  C:\Python3.10\lib\site-packages</msg>
-<msg timestamp="20220111 15:20:13.202" level="ERROR">Error in file 'C:\Users\Aisha\PycharmProjects\pythonProject\pythonProject\aYoWebApps\PortalTestCases\Claims_Portal.robot' on line 7: Variable file 'C:\Users\Aisha\PycharmProjects\pythonProject\pythonProject\RobotAutomation\Resources\PortalsElements.yaml' does not exist.</msg>
 </errors>
 </robot>
