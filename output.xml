@@ -1,84 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.2 (Python 3.10.1 on win32)" generated="20220526 00:32:02.433" rpa="false" schemaversion="2">
-<suite id="s1" name="TC 001 Start Close Browser" source="C:\Users\Aisha\PycharmProjects\pythonProject\pythonProject\RobotAutomation\TestCases\TC_001_Start_Close_Browser.robot">
-<test id="s1-t1" name="Robot First Test Case">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>${URL}</arg>
-<arg>${Browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220526 00:32:02.831" level="INFO">Opening browser 'Chrome' to base url 'http://www.thetestingworld.com/testings'.</msg>
-<status status="PASS" starttime="20220526 00:32:02.831" endtime="20220526 00:32:09.410"/>
+<robot generator="Robot 4.1.2 (Python 3.10.1 on win32)" generated="20220620 23:58:55.918" rpa="false" schemaversion="2">
+<suite id="s1" name="TC 0001" source="C:\Users\Aisha\PycharmProjects\pythonProject\pythonProject\RobotAutomation\SikuliTestCases\TC_0001.robot">
+<test id="s1-t1" name="TC_0001 Start Browser on Windows">
+<kw name="Start Sikuli Process" library="SikuliLibrary">
+<msg timestamp="20220620 23:58:56.032" level="INFO">Starting process:
+java -jar C:\Python3.10\lib\site-packages\SikuliLibrary\lib\SikuliLibrary.jar 3848 C:\Users\Aisha\PycharmProjects\pythonProject\pythonProject\RobotAutomation</msg>
+<msg timestamp="20220620 23:58:56.038" level="INFO">Start sikuli java process on port 3848</msg>
+<msg timestamp="20220620 23:58:58.218" level="INFO">Sikuli java process is started</msg>
+<status status="PASS" starttime="20220620 23:58:56.020" endtime="20220620 23:59:01.332"/>
 </kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220526 00:32:09.410" endtime="20220526 00:32:09.546"/>
+<kw name="Add Image Path" library="SikuliLibrary">
+<arg>C:\Users\Aisha\Desktop\SikuliImages</arg>
+<doc>Add image path</doc>
+<msg timestamp="20220620 23:59:01.366" level="INFO">[error] ImagePath: addHTTP: not possible: C:UsersAishaDesktopSikuliImages
+java.net.MalformedURLException: For input string: "UsersAishaDesktopSikuliImages"</msg>
+<status status="PASS" starttime="20220620 23:59:01.333" endtime="20220620 23:59:01.366"/>
 </kw>
-<kw name="Set Selenium Timeout" library="SeleniumLibrary">
-<arg>20 seconds</arg>
-<doc>Sets the timeout that is used by various keywords.</doc>
-<status status="PASS" starttime="20220526 00:32:09.548" endtime="20220526 00:32:09.551"/>
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<arg>Start.png</arg>
+<arg>10</arg>
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<msg timestamp="20220620 23:59:12.393" level="INFO">[error] ImagePath: find: not there: Start.png</msg>
+<msg timestamp="20220620 23:59:12.393" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1655762352010.png'/&gt;
+[error] ImagePath: find: not there: Start.png</msg>
+<msg timestamp="20220620 23:59:12.394" level="FAIL">com.github.rainmanwy.robotframework.sikulilib.exceptions.TimeoutException: Timeout happened, could not find P(Start.png -- not valid!) S: 0.699999988079071</msg>
+<status status="FAIL" starttime="20220620 23:59:01.366" endtime="20220620 23:59:12.394"/>
 </kw>
-<kw name="Get Selenium Timeout" library="SeleniumLibrary">
-<var>${tm}</var>
-<doc>Gets the timeout that is used by various keywords.</doc>
-<msg timestamp="20220526 00:32:09.553" level="INFO">${tm} = 20 seconds</msg>
-<status status="PASS" starttime="20220526 00:32:09.552" endtime="20220526 00:32:09.553"/>
+<kw name="Double Click" library="SikuliLibrary">
+<arg>Start.png</arg>
+<doc>Double click</doc>
+<status status="NOT RUN" starttime="20220620 23:59:12.403" endtime="20220620 23:59:12.403"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${tm}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220526 00:32:09.554" endtime="20220526 00:32:09.555"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Testing</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20220526 00:32:09.555" endtime="20220526 00:32:09.576"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>name:fld_username</arg>
-<arg>Aisha_H</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220526 00:32:09.577" level="INFO">Typing text 'Aisha_H' into text field 'name:fld_username'.</msg>
-<status status="PASS" starttime="20220526 00:32:09.576" endtime="20220526 00:32:09.762"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>xpath://input[@name='fld_email']</arg>
-<arg>ash.hlatshwayo22@gmail.com</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220526 00:32:09.763" level="INFO">Typing text 'ash.hlatshwayo22@gmail.com' into text field 'xpath://input[@name='fld_email']'.</msg>
-<status status="PASS" starttime="20220526 00:32:09.763" endtime="20220526 00:32:09.912"/>
-</kw>
-<kw name="Select Radio Button" library="SeleniumLibrary">
-<arg>add_type</arg>
-<arg>office</arg>
-<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
-<msg timestamp="20220526 00:32:09.912" level="INFO">Selecting 'office' from radio button 'add_type'.</msg>
-<status status="PASS" starttime="20220526 00:32:09.912" endtime="20220526 00:32:09.983"/>
-</kw>
-<kw name="Select Checkbox" library="SeleniumLibrary">
-<arg>name:terms</arg>
-<doc>Selects the checkbox identified by ``locator``.</doc>
-<msg timestamp="20220526 00:32:09.984" level="INFO">Selecting checkbox 'name:terms'.</msg>
-<status status="PASS" starttime="20220526 00:32:09.984" endtime="20220526 00:32:10.072"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>xpath://input[@type='submit']</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20220526 00:32:10.073" level="INFO">Clicking button 'xpath://input[@type='submit']'.</msg>
-<status status="PASS" starttime="20220526 00:32:10.073" endtime="20220526 00:32:10.182"/>
-</kw>
-<status status="PASS" starttime="20220526 00:32:02.830" endtime="20220526 00:32:10.183"/>
+<status status="FAIL" starttime="20220620 23:58:56.019" endtime="20220620 23:59:12.403">com.github.rainmanwy.robotframework.sikulilib.exceptions.TimeoutException: Timeout happened, could not find P(Start.png -- not valid!) S: 0.699999988079071</status>
 </test>
-<status status="PASS" starttime="20220526 00:32:02.437" endtime="20220526 00:32:10.186"/>
+<status status="FAIL" starttime="20220620 23:58:55.921" endtime="20220620 23:59:12.406"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="TC 001 Start Close Browser">TC 001 Start Close Browser</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="TC 0001">TC 0001</stat>
 </suite>
 </statistics>
 <errors>
