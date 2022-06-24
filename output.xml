@@ -1,51 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.2 (Python 3.10.1 on win32)" generated="20220620 23:58:55.918" rpa="false" schemaversion="2">
-<suite id="s1" name="TC 0001" source="C:\Users\Aisha\PycharmProjects\pythonProject\pythonProject\RobotAutomation\SikuliTestCases\TC_0001.robot">
-<test id="s1-t1" name="TC_0001 Start Browser on Windows">
-<kw name="Start Sikuli Process" library="SikuliLibrary">
-<msg timestamp="20220620 23:58:56.032" level="INFO">Starting process:
-java -jar C:\Python3.10\lib\site-packages\SikuliLibrary\lib\SikuliLibrary.jar 3848 C:\Users\Aisha\PycharmProjects\pythonProject\pythonProject\RobotAutomation</msg>
-<msg timestamp="20220620 23:58:56.038" level="INFO">Start sikuli java process on port 3848</msg>
-<msg timestamp="20220620 23:58:58.218" level="INFO">Sikuli java process is started</msg>
-<status status="PASS" starttime="20220620 23:58:56.020" endtime="20220620 23:59:01.332"/>
+<robot generator="Robot 4.1.2 (Python 3.10.1 on win32)" generated="20220622 00:06:33.939" rpa="false" schemaversion="2">
+<suite id="s1" name="TC 002 Get Request" source="C:\Users\Aisha\PycharmProjects\pythonProject\pythonProject\RobotAutomation\REST-APITest\TC_002_Get_Request.robot">
+<test id="s1-t1" name="TC_002_Fetch_student_details_by_id">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>FetchData</arg>
+<arg>${App_Base_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220622 00:06:34.216" level="INFO">Creating Session using : alias=FetchData, url=https://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220622 00:06:34.215" endtime="20220622 00:06:34.216"/>
 </kw>
-<kw name="Add Image Path" library="SikuliLibrary">
-<arg>C:\Users\Aisha\Desktop\SikuliImages</arg>
-<doc>Add image path</doc>
-<msg timestamp="20220620 23:59:01.366" level="INFO">[error] ImagePath: addHTTP: not possible: C:UsersAishaDesktopSikuliImages
-java.net.MalformedURLException: For input string: "UsersAishaDesktopSikuliImages"</msg>
-<status status="PASS" starttime="20220620 23:59:01.333" endtime="20220620 23:59:01.366"/>
+<kw name="Get Request" library="RequestsLibrary">
+<var>${Response}</var>
+<arg>FetchData</arg>
+<arg>api/studentsDetails/${StudentID}</arg>
+<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
+<msg timestamp="20220622 00:06:34.217" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20220622 00:06:36.347" level="INFO">GET Request : url=https://thetestingworldapi.com/api/studentsDetails/28 
+ path_url=/api/studentsDetails/28 
+ headers={'User-Agent': 'python-requests/2.28.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220622 00:06:36.348" level="INFO">GET Response : url=https://thetestingworldapi.com/api/studentsDetails/28 
+ status=200, reason=OK 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/8.5', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Tue, 21 Jun 2022 22:06:37 GMT', 'Content-Length': '40'} 
+ body={"status":"false","msg":"No data Found"} 
+ </msg>
+<msg timestamp="20220622 00:06:36.348" level="INFO">C:\Python3.10\lib\site-packages\urllib3\connectionpool.py:997: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20220622 00:06:36.352" level="INFO">${Response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220622 00:06:34.217" endtime="20220622 00:06:36.352"/>
 </kw>
-<kw name="Wait Until Screen Contain" library="SikuliLibrary">
-<arg>Start.png</arg>
-<arg>10</arg>
-<doc>Wait until screen contain
- Wait until image shown in screen</doc>
-<msg timestamp="20220620 23:59:12.393" level="INFO">[error] ImagePath: find: not there: Start.png</msg>
-<msg timestamp="20220620 23:59:12.393" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1655762352010.png'/&gt;
-[error] ImagePath: find: not there: Start.png</msg>
-<msg timestamp="20220620 23:59:12.394" level="FAIL">com.github.rainmanwy.robotframework.sikulilib.exceptions.TimeoutException: Timeout happened, could not find P(Start.png -- not valid!) S: 0.699999988079071</msg>
-<status status="FAIL" starttime="20220620 23:59:01.366" endtime="20220620 23:59:12.394"/>
+<kw name="Convert To String" library="BuiltIn">
+<var>${actual_code}</var>
+<arg>${Response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20220622 00:06:36.362" level="INFO">${actual_code} = 200</msg>
+<status status="PASS" starttime="20220622 00:06:36.355" endtime="20220622 00:06:36.363"/>
 </kw>
-<kw name="Double Click" library="SikuliLibrary">
-<arg>Start.png</arg>
-<doc>Double click</doc>
-<status status="NOT RUN" starttime="20220620 23:59:12.403" endtime="20220620 23:59:12.403"/>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${actual_code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220622 00:06:36.364" endtime="20220622 00:06:36.366"/>
 </kw>
-<status status="FAIL" starttime="20220620 23:58:56.019" endtime="20220620 23:59:12.403">com.github.rainmanwy.robotframework.sikulilib.exceptions.TimeoutException: Timeout happened, could not find P(Start.png -- not valid!) S: 0.699999988079071</status>
+<status status="PASS" starttime="20220622 00:06:34.214" endtime="20220622 00:06:36.367"/>
 </test>
-<status status="FAIL" starttime="20220620 23:58:55.921" endtime="20220620 23:59:12.406"/>
+<status status="PASS" starttime="20220622 00:06:33.942" endtime="20220622 00:06:36.371"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="TC 0001">TC 0001</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="TC 002 Get Request">TC 002 Get Request</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20220622 00:06:34.217" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
 </errors>
 </robot>
