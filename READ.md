@@ -40,3 +40,19 @@
     6. HEAD
     7. OPTIONS
     8. TRACE
+
+**Basic JSON Understanding**
+
+***Learn JSON format***
+* JSON (JavaScript Object Notation) is lightweight data interchange format.
+* JSON is a syntax for storing and exchanging data
+* Data is placed in JSON in the format of key and value pair 
+* Value could be an array
+* Value can have further key-value(Call it object)"
+
+***How to Write Json Path***
+* What is JSON Path
+* What is the use of JSON Path
+* How to write simple Json Path (jsonpath.com)
+* How to write complex Json Path with Array
+* How to write complex Json Path with object
