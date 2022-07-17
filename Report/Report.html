@@ -5,7 +5,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="Robot Framework 4.1 (Python 3.9.6 on win32)" name="Generator">
+<meta content="Robot Framework 4.1.2 (Python 3.10.1 on win32)" name="Generator">
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKcAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAqAAAAAAAAAAAAAAAAAAAALIAAAD/AAAA4AAAANwAAADcAAAA3AAAANwAAADcAAAA3AAAANwAAADcAAAA4AAAAP8AAACxAAAAAAAAAKYAAAD/AAAAuwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC/AAAA/wAAAKkAAAD6AAAAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN8AAAD/AAAA+gAAAMMAAAAAAAAAAgAAAGsAAABrAAAAawAAAGsAAABrAAAAawAAAGsAAABrAAAADAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAIsAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAANEAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAAAAAAAAMgAAADIAAAAyAAAAMgAAADIAAAAyAAAAMgAAADIAAAAFAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAADwAAAB8AAAAAAAAAGAAAABcAAAAAAAAAH8AAABKAAAAAAAAAAAAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAADCAAAA/wAAACkAAADqAAAA4QAAAAAAAAD7AAAA/wAAALAAAAAGAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAIwAAAP4AAAD/AAAA/wAAAGAAAAAAAAAAAAAAAMkAAAD/AAAAigAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAAAAAAAIAAAAcAAAABkAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAA2gAAAP8AAAD7AAAAywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN4AAAD/AAAAqwAAAP8AAACvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALIAAAD/AAAAsgAAAAAAAAC5AAAA/wAAAMoAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMkAAAD/AAAAvAAAAAAAAAAAAAAAAAAAAKwAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAArQAAAAAAAAAAwAMAAIABAAAf+AAAP/wAAD/8AAAgBAAAP/wAAD/8AAA//AAAJIwAADHEAAA//AAAP/wAAB/4AACAAQAAwAMAAA==">
 <style media="all" type="text/css">
 /* Generic and misc styles */
@@ -1186,7 +1186,10 @@ window.testdata = function () {
     function createBodyItem(parent, element, strings, index) {
         if (element[0] == MESSAGE_TYPE)
             return createMessage(element, strings);
-        return createKeyword(parent, element, strings, index);
+        var messages = util.filter(parent.children(), function (child) {
+            return child.type == 'message';
+        })
+        return createKeyword(parent, element, strings, index - messages.length);
     }
     function createKeyword(parent, element, strings, index) {
         var kw = model.Keyword({
@@ -1625,28 +1628,28 @@ storage = function () {
 window.output = {};
 </script>
 <script type="text/javascript">
-window.output["suite"] = [1,2,3,0,[],[0,0,6047],[],[[4,0,5,[],[0,1674,4373,6],[]]],[],[1,0,1,0]];
+window.output["suite"] = [1,2,3,0,[],[0,0,17018],[[4,5,6,0,[],[0,39,8012],[[7,8,9,0,[],[1,46,3437],[],[[10,0,0,[],[1,336,3144],[]]],[],[1,1,0,0]],[11,12,13,0,[],[0,3486,3099],[],[[14,0,0,[],[0,3510,3073,15],[]]],[],[1,0,1,0]],[16,17,18,0,[],[1,6588,1459],[],[[19,0,0,[],[1,6604,1439],[]]],[],[1,1,0,0]]],[],[],[3,2,1,0]],[20,21,22,0,[],[0,8055,5705],[[23,24,25,0,[],[1,8060,1774],[],[[26,0,0,[],[1,8067,1765],[]]],[],[1,1,0,0]],[27,28,29,0,[],[0,9836,1561],[],[[14,0,0,[],[0,9847,1548,30],[]]],[],[1,0,1,0]],[31,32,33,0,[],[1,11399,861],[],[[34,0,0,[],[1,11407,852],[]]],[],[1,1,0,0]],[35,36,37,0,[],[1,12263,1494],[],[[38,0,0,[],[1,12270,1485],[]]],[],[1,1,0,0]]],[],[],[4,3,1,0]],[39,40,41,0,[],[1,13764,3250],[[42,43,44,0,[],[1,13768,1407],[],[[19,0,0,[],[1,13776,1398],[]]],[],[1,1,0,0]],[45,46,47,0,[],[1,15178,1832],[],[[48,0,0,[],[1,15186,1821],[]]],[],[1,1,0,0]]],[],[],[2,2,0,0]]],[],[],[9,7,2,0]];
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
 </script>
 <script type="text/javascript">
-window.output["strings"] = window.output["strings"].concat(["*","*TC 002 DropdownList","*C:\\Users\\user\\PycharmProjects\\pythonProject\\pythonProject\\RobotAutomation\\TestCases\\TC_002_DropdownList.robot","*../TestCases/TC_002_DropdownList.robot","*Robot First Test Case","*<p>This test cases is to check registration functionality of Application\x3c/p>","*SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 92\nCurrent browser version is 94.0.4606.61 with binary path C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\n"]);
+window.output["strings"] = window.output["strings"].concat(["*","*REST-APITest","*C:\\Users\\Aisha\\PycharmProjects\\pythonProject\\pythonProject\\RobotAutomation\\REST-APITest","*../REST-APITest","*EndtoEnd","*C:\\Users\\Aisha\\PycharmProjects\\pythonProject\\pythonProject\\RobotAutomation\\REST-APITest\\EndtoEnd","*../REST-APITest/EndtoEnd","*TC 006 End2End","*C:\\Users\\Aisha\\PycharmProjects\\pythonProject\\pythonProject\\RobotAutomation\\REST-APITest\\EndtoEnd\\TC_006_End2End.robot","*../REST-APITest/EndtoEnd/TC_006_End2End.robot","*TC_006 End_to_End_TestCase","*TC 007 ValidateStatusCode Keyword","*C:\\Users\\Aisha\\PycharmProjects\\pythonProject\\pythonProject\\RobotAutomation\\REST-APITest\\EndtoEnd\\TC_007_ValidateStatusCode_Keyword.robot","*../REST-APITest/EndtoEnd/TC_007_ValidateStatusCode_Keyword.robot","*TC_002_Fetch_student_details_by_id","*Resolving variable '${response.content}' failed: AttributeError: 'str' object has no attribute 'content'","*TC 008 Post ReadJson","*C:\\Users\\Aisha\\PycharmProjects\\pythonProject\\pythonProject\\RobotAutomation\\REST-APITest\\EndtoEnd\\TC_008_Post_ReadJson.robot","*../REST-APITest/EndtoEnd/TC_008_Post_ReadJson.robot","*TC_004 Create New Resource","*Get Delete","*C:\\Users\\Aisha\\PycharmProjects\\pythonProject\\pythonProject\\RobotAutomation\\REST-APITest\\Get_Delete","*../REST-APITest/Get_Delete","*TC 001 Get Request","*C:\\Users\\Aisha\\PycharmProjects\\pythonProject\\pythonProject\\RobotAutomation\\REST-APITest\\Get_Delete\\TC_001_Get_Request.robot","*../REST-APITest/Get_Delete/TC_001_Get_Request.robot","*TC_001_Get_Request","*TC 002 Get Request","*C:\\Users\\Aisha\\PycharmProjects\\pythonProject\\pythonProject\\RobotAutomation\\REST-APITest\\Get_Delete\\TC_002_Get_Request.robot","*../REST-APITest/Get_Delete/TC_002_Get_Request.robot","*IndexError: Given index 0 is out of the range 0--1.","*TC 002 Get With Param","*C:\\Users\\Aisha\\PycharmProjects\\pythonProject\\pythonProject\\RobotAutomation\\REST-APITest\\Get_Delete\\TC_002_Get_With_Param.robot","*../REST-APITest/Get_Delete/TC_002_Get_With_Param.robot","*TC_002 Validate Get Request with Parameters","*TC 003 DeleteRequest","*C:\\Users\\Aisha\\PycharmProjects\\pythonProject\\pythonProject\\RobotAutomation\\REST-APITest\\Get_Delete\\TC_003_DeleteRequest.robot","*../REST-APITest/Get_Delete/TC_003_DeleteRequest.robot","*TC_003 Validate Delete Request","*Put Post","*C:\\Users\\Aisha\\PycharmProjects\\pythonProject\\pythonProject\\RobotAutomation\\REST-APITest\\Put_Post","*../REST-APITest/Put_Post","*TC 004 PostRequest","*C:\\Users\\Aisha\\PycharmProjects\\pythonProject\\pythonProject\\RobotAutomation\\REST-APITest\\Put_Post\\TC_004_PostRequest.robot","*../REST-APITest/Put_Post/TC_004_PostRequest.robot","*TC 005 PutRequest","*C:\\Users\\Aisha\\PycharmProjects\\pythonProject\\pythonProject\\RobotAutomation\\REST-APITest\\Put_Post\\TC_005_PutRequest.robot","*../REST-APITest/Put_Post/TC_005_PutRequest.robot","*TC_005 Create New Resource"]);
 </script>
 <script type="text/javascript">
-window.output["stats"] = [[{"elapsed":"00:00:04","fail":1,"label":"All Tests","pass":0,"skip":0}],[],[{"elapsed":"00:00:06","fail":1,"id":"s1","label":"TC 002 DropdownList","name":"TC 002 DropdownList","pass":0,"skip":0}]];
+window.output["stats"] = [[{"elapsed":"00:00:17","fail":2,"label":"All Tests","pass":7,"skip":0}],[],[{"elapsed":"00:00:17","fail":2,"id":"s1","label":"REST-APITest","name":"REST-APITest","pass":7,"skip":0},{"elapsed":"00:00:08","fail":1,"id":"s1-s1","label":"REST-APITest.EndtoEnd","name":"EndtoEnd","pass":2,"skip":0},{"elapsed":"00:00:03","fail":0,"id":"s1-s1-s1","label":"REST-APITest.EndtoEnd.TC 006 End2End","name":"TC 006 End2End","pass":1,"skip":0},{"elapsed":"00:00:03","fail":1,"id":"s1-s1-s2","label":"REST-APITest.EndtoEnd.TC 007 ValidateStatusCode Keyword","name":"TC 007 ValidateStatusCode Keyword","pass":0,"skip":0},{"elapsed":"00:00:01","fail":0,"id":"s1-s1-s3","label":"REST-APITest.EndtoEnd.TC 008 Post ReadJson","name":"TC 008 Post ReadJson","pass":1,"skip":0},{"elapsed":"00:00:06","fail":1,"id":"s1-s2","label":"REST-APITest.Get Delete","name":"Get Delete","pass":3,"skip":0},{"elapsed":"00:00:02","fail":0,"id":"s1-s2-s1","label":"REST-APITest.Get Delete.TC 001 Get Request","name":"TC 001 Get Request","pass":1,"skip":0},{"elapsed":"00:00:02","fail":1,"id":"s1-s2-s2","label":"REST-APITest.Get Delete.TC 002 Get Request","name":"TC 002 Get Request","pass":0,"skip":0},{"elapsed":"00:00:01","fail":0,"id":"s1-s2-s3","label":"REST-APITest.Get Delete.TC 002 Get With Param","name":"TC 002 Get With Param","pass":1,"skip":0},{"elapsed":"00:00:01","fail":0,"id":"s1-s2-s4","label":"REST-APITest.Get Delete.TC 003 DeleteRequest","name":"TC 003 DeleteRequest","pass":1,"skip":0},{"elapsed":"00:00:03","fail":0,"id":"s1-s3","label":"REST-APITest.Put Post","name":"Put Post","pass":2,"skip":0},{"elapsed":"00:00:01","fail":0,"id":"s1-s3-s1","label":"REST-APITest.Put Post.TC 004 PostRequest","name":"TC 004 PostRequest","pass":1,"skip":0},{"elapsed":"00:00:02","fail":0,"id":"s1-s3-s2","label":"REST-APITest.Put Post.TC 005 PutRequest","name":"TC 005 PutRequest","pass":1,"skip":0}]];
 </script>
 <script type="text/javascript">
-window.output["baseMillis"] = 1633006044618;
+window.output["baseMillis"] = 1657994383657;
 </script>
 <script type="text/javascript">
-window.output["generated"] = 6169;
+window.output["generated"] = 17077;
 </script>
 <script type="text/javascript">
 window.output["expand_keywords"] = null;
 </script>
 <script type="text/javascript">
-window.settings = {"background":{"fail":"#f66","pass":"#9e9","skip":"#fed84f"},"logURL":"logs.html","rpa":false,"title":""};
+window.settings = {"background":{"fail":"#f66","pass":"#9e9","skip":"#fed84f"},"logURL":"log.html","rpa":false,"title":""};
 </script>
 <title></title>
 </head>

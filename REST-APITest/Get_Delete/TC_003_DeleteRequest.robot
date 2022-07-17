@@ -2,6 +2,7 @@
 Library  RequestsLibrary
 Library  JSONLibrary
 Library  Collections
+Resource  ../../../RobotAutomation/Resources/UserKeywordsAPI.robot
 
 
 *** Variables ***
@@ -9,7 +10,10 @@ ${base_url}  https://thetestingworldapi.com/
 
 
 *** Test Cases ***
-TC_003 Validate Delete Request
+TC_003 Validate Delete
+    [Setup]  Welcome User
+    [Teardown]  End Test Case
+    [Tags]  Smoke  Regression
     create session  AppAccess  ${base_url}
     ${response}=  delete request  AppAccess  api/studentsDetails/32
     ${code}=  convert to string  ${response.status_code}
